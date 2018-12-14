@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -328,31 +330,62 @@
             </div>
             <div class="col-lg-9">
               <div id="pagination" class="wp-example">
-                <h3 class="section-title">Pagination</h3>
+                <h3 class="section-title">의뢰게시판</h3>
                 <div class="row">
                   <div class="col-md-12">
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination pagination-lg">
-                        <li class="page-item"><a href="#" class="page-link">«</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">»</a></li>
-                      </ul>
-                    </nav>
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination">
-                        <li class="page-item"><a href="#" class="page-link">«</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">»</a></li>
-                      </ul>
-                    </nav>
+              <div class="box mt-0 mb-lg-0">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>닉네임</th>
+                        <th>날짜</th>
+                        <th>제목</th>
+                        <th>포인트</th>
+                        <th>수주하기</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>세존대완</th>
+                        <td>22/06/2013</td>
+                        <td>열어분 한글 쏴랑해주세요 땡큐 땡큐! 4딸라!4$!</td>
+                        <td><span class="badge badge-info">20000P</span></td>
+                        <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">수주하기</a></td>
+                      </tr>
+                      <tr>
+                        <th>유저아뒤</th>
+                        <td>22/06/2013</td>
+                        <td>까만 탄밥위에 몰캉몰캉한 삼겹살 한덩이</td>
+                        <td><span class="badge badge-info">25000P</span></td>
+                        <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">수주하기</a></td>
+                      </tr>
+                      <tr>
+                        <th>흥민전음</th>
+                        <td>22/06/2013</td>
+                        <td>나랏말싸뮈 듕귁에달아 사맛디 아니할세 </td>
+                        <td><span class="badge badge-success">30000P</span></td>
+                        <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">수주하기</a></td>
+                      </tr>
+                      <tr>
+                        <th>아베 신세계</th>
+                        <td>22/06/2013</td>
+                        <td>고쿠민사마타치노 오카게데 이마노 와타시가 이마스</td>
+                        <td><span class="badge badge-danger">50000P</span></td>
+                        <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">수주하기</a></td>
+                      </tr>
+                      <tr>
+                        <th>로날도 도람푸</th>
+                        <td>22/06/2013</td>
+                        <td>그뤠잇 어뭬리카 어겐~</td>
+                        <td><span class="badge badge-warning">10K</span></td>
+                        <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">수주하기</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+                   
                     <nav aria-label="Page navigation example">
                       <ul class="pagination pagination-sm">
                         <li class="page-item"><a href="#" class="page-link">«</a></li>
