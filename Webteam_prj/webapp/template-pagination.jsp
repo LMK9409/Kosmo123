@@ -361,7 +361,7 @@
                         <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">수주하기</a></td>
                       </tr>
                       <tr>
-                        <th>흥민전음</th>
+                        <th>흥민전음</th> 
                         <td>22/06/2013</td>
                         <td>나랏말싸뮈 듕귁에달아 사맛디 아니할세 </td>
                         <td><span class="badge badge-success">30000P</span></td>
