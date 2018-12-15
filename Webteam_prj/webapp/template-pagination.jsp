@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,6 +38,42 @@
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <script >
+        $(document).ready(function(){
+
+	    	$.ajax({                         //의뢰 리스트 ajax로 불러오는부분
+  				url:"/OrderList",
+  				type:"post",
+  				success:function(res){
+  					
+  					console.log(res);
+  					
+  					var reshtml="";
+  					 $.each(res, function(index, vv){
+     						reshtml+="<li class=\"media\">";
+     						reshtml+="<img class=\"mr-3 rounded-circle\" width=\"50\" src=\"/cdir/"+vv.pname+"\" alt=\"avatar\">";
+     						reshtml+="<div class=\"media-body\">";
+     						reshtml+="<div class=\"float-right\"><small>"+vv.distance+"  km</small></div>";
+     					    reshtml +="<div class=\"media-title\"><a href=/shop_detail?sseq="+vv.sseq+">"+vv.sname+"</a></div> ";
+     						reshtml+="<small>"+vv.sinfo+"</small>";
+     						reshtml+="</div>";
+     						reshtml+="</li>";
+  				 });
+
+  					$(".list-unstyled.list-unstyled-border").html(reshtml);
+  					
+  				}
+  			})
+
+      	  
+      	  
+    /*     $("#viewAllBtn").click(function(){   
+          }); */
+      		
+	    	
+	    	
+      })
+      </script>
   </head>
   <body>
     <div id="all">
