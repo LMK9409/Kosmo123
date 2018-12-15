@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -70,7 +75,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 id="login-modalLabel" class="modal-title">Customer Login</h4>
-              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">Ã</span></button>
             </div>
             <div class="modal-body">
               <form action="customer-orders.html" method="get">
@@ -85,7 +90,7 @@
                 </p>
               </form>
               <p class="text-center text-muted">Not registered yet?</p>
-              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
+              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1Â minute and gives you access to special discounts and much more!</p>
             </div>
           </div>
         </div>
@@ -292,7 +297,7 @@
         <div class="container">
           <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-              <h1 class="h2">My Account</h1>
+              <h1 class="h2">내 계정</h1>
             </div>
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
@@ -307,129 +312,120 @@
         <div class="container">
           <div class="row bar">
             <div id="customer-account" class="col-lg-9 clearfix">
-              <p class="lead">Change your personal details or your password here.</p>
-              <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+              
+              <p class="lead">기본정보를 변경하실 수 있습니다.</p>
+              <p class="text-muted">Change your personal details or your password here.</p>
               <div class="box mt-5">
+              	
                 <div class="heading">
-                  <h3 class="text-uppercase">Change password</h3>
+                  <h3 class="text-uppercase">기본정보 변경</h3>
                 </div>
                 <form>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="password_old">Old password</label>
-                        <input id="password_old" type="password" class="form-control">
+                        <label for="member_name" ><font color="red">이름</font></label><br>
+ <!-- 이름 받아오는곳 여기! -->     김철희   <!-- 아이디잉ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇname -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="member_id"><font color="red">아이디</font></label><br>
+ <!-- 아이디 받아오는곳 여기! -->     mggm7800@naver.com   <!-- 아이디잉ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇid -->
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                     
+                    </div>
+                  </div>
+                 <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <span>
+                        <label for="member_name" ><font color="red">연락처</font></label><br>
+ 						<input id="firstname" type="text" class="form-control">
+ 						<h6>예) 01040007203</h6>
+ 						</span>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="password_1">New password</label>
-                        <input id="password_1" type="password" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="password_2">Retype new password</label>
-                        <input id="password_2" type="password" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-template-outlined"><i class="fa fa-save"></i> Save new password</button>
-                  </div>
-                </form>
-              </div>
-              <div class="bo3">
-                <div class="heading">
-                  <h3 class="text-uppercase">Personal details</h3>
-                </div>
-                <form>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="firstname">Firstname</label>
+                        <label for="firstname"><font color="red">배송지 주소</font></label>
                         <input id="firstname" type="text" class="form-control">
                       </div>
-                    </div>
-                    <div class="col-md-6">
+                    
+                    
                       <div class="form-group">
-                        <label for="lastname">Lastname</label>
-                        <input id="lastname" type="text" class="form-control">
+                        <input id="lastname" type="text" class="form-control" placeholder="상세주소 입력">
                       </div>
                     </div>
                   </div>
+                  
                   <div class="row">
+             
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="company">Company</label>
-                        <input id="company" type="text" class="form-control">
+                        <label for="email_account"></label>
+                        
+                        
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="street">Street</label>
-                        <input id="street" type="text" class="form-control">
-                      </div>
-                    </div>
+                   
                   </div>
-                  <div class="row">
-                    <div class="col-md-6 col-lg-3">
-                      <div class="form-group">
-                        <label for="city">Company</label>
-                        <input id="city" type="text" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                      <div class="form-group">
-                        <label for="zip">ZIP</label>
-                        <input id="zip" type="text" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                      <div class="form-group">
-                        <label for="state">State</label>
-                        <select id="state" class="form-control"></select>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                      <div class="form-group">
-                        <label for="country">Country</label>
-                        <select id="country" class="form-control"></select>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="phone">Telephone</label>
-                        <input id="phone" type="text" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="email_account">Email</label>
-                        <input id="email_account" type="text" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-12 text-center">
-                      <button type="submit" class="btn btn-template-outlined"><i class="fa fa-save"></i> Save changes</button>
+                  <div >
+                    
+                   
+                     <div class="col-md-12 text-center">
+                      <button type="submit" class="btn btn-template-outlined"><i class=""></i>수정</button>
+                      <button type="submit" class="btn btn-template-outlined"><i class=""></i>취소</button>
                     </div>
                   </div>
                 </form>
+           
               </div>
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
               <!-- CUSTOMER MENU -->
               <div class="panel panel-default sidebar-menu">
                 <div class="panel-heading">
-                  <h3 class="h4 panel-title">Customer section</h3>
+                  <h3 class="h4 panel-title">마이페이지</h3>
                 </div>
                 <div class="panel-body">
                   <ul class="nav nav-pills flex-column text-sm">
-                    <li class="nav-item"><a href="customer-orders.html" class="nav-link active"><i class="fa fa-list"></i> My orders</a></li>
-                    <li class="nav-item"><a href="customer-wishlist.html" class="nav-link"><i class="fa fa-heart"></i> My wishlist</a></li>
-                    <li class="nav-item"><a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i> My account</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    <li class="nav-item"><a href="customer-orders.html" class="nav-link"><i class="fa fa-list"></i>의뢰신청 / 수주</a></li>
+                    <li class="nav-item"><a href="customer-wishlist.html" class="nav-link"><i class="fa fa-heart"></i>포인트 조회</a></li>
+                    <li class="nav-item"><a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i>포인트 환급</a></li>
+                    <li class="nav-item"><a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i>충전</a></li>
+                    
+    <!------------  <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></li>---------------------로그아웃 -->  
+                    
+                  </ul>
+                </div>
+                 <div class="panel-heading">
+                  <h3 class="h4 panel-title">고객센터</h3>
+                </div>
+                <div class="panel-body">
+                  <ul class="nav nav-pills flex-column text-sm">
+                    <li class="nav-item"><a href="customer-orders.html" class="nav-link"><i class="fa fa-list"></i>FAQ</a></li>
+                 
+    <!------------  <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></li>---------------------로그아웃 -->  
+                    
+                  </ul>
+                </div>
+                 <div class="panel-heading">
+                  <h3 class="h4 panel-title">회원정보</h3>
+                </div>
+                <div class="panel-body">
+                  <ul class="nav nav-pills flex-column text-sm">
+                    <li class="nav-item"><a href="customer-account.jsp" class="nav-link active"><i class="fa fa-list"></i>기본정보 변경</a></li>
+                    <li class="nav-item"><a href="customer-account.jsp" class="nav-link"><i class="fa fa-list"></i>회원탈퇴</a></li>
+                    
+    <!------------  <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></li>---------------------로그아웃 -->  
+                    
                   </ul>
                 </div>
               </div>
