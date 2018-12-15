@@ -35,12 +35,13 @@
     <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-        <script >
+        <script>
         $(document).ready(function(){
-
+				
 	    	$.ajax({                         //의뢰 리스트 ajax로 불러오는부분
   				url:"/OrderList",
   				type:"post",
@@ -48,7 +49,7 @@
   					
   					console.log(res);
   					
-  					var reshtml="";
+  					/* var reshtml="";
   					 $.each(res, function(index, vv){
      						reshtml+="<li class=\"media\">";
      						reshtml+="<img class=\"mr-3 rounded-circle\" width=\"50\" src=\"/cdir/"+vv.pname+"\" alt=\"avatar\">";
@@ -57,10 +58,10 @@
      					    reshtml +="<div class=\"media-title\"><a href=/shop_detail?sseq="+vv.sseq+">"+vv.sname+"</a></div> ";
      						reshtml+="<small>"+vv.sinfo+"</small>";
      						reshtml+="</div>";
-     						reshtml+="</li>";
-  				 });
+     						reshtml+="</li>"; */
+  				 /* }); */
 
-  					$(".list-unstyled.list-unstyled-border").html(reshtml);
+  				/* 	$(".list-unstyled.list-unstyled-border").html(reshtml); */
   					
   				}
   			})

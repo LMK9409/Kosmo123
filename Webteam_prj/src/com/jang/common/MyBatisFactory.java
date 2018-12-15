@@ -1,4 +1,4 @@
-package com.biz.common;
+package com.jang.common;
 
 import java.io.Reader;
 
