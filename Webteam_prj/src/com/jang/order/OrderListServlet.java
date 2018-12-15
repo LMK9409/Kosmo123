@@ -1,5 +1,7 @@
 package com.jang.order;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +34,10 @@ public class OrderListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		OrderDAO oDAO = new OrderDAO();
+	    ArrayList<orderVO> list=new ArrayList<orderVO>();
+		list=oDAO.select();
+		System.out.println(list.size());
 	}
 
 }
