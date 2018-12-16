@@ -21,7 +21,7 @@ public class OrderDAO {
    
    
    /**
-    * 회원 정보 수정을 위한 모든 정보 가져오기
+    * �쉶�썝 �젙蹂� �닔�젙�쓣 �쐞�븳 紐⑤뱺 �젙蹂� 媛��졇�삤湲�
     * @param userId
     * @return
     */
@@ -29,7 +29,7 @@ public class OrderDAO {
       SqlSession conn =null;
       ArrayList<orderVO> resList =null;
       try {
-         conn = MyBatisFactory.getFactory().openSession();
+         conn = MyBatisFactory.getFactory().openSession(); 
          resList =(ArrayList)conn.selectList("orderNameSpace.orderAll");   
       }catch(Exception e) {
     	  conn.close();
