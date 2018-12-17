@@ -2,9 +2,9 @@
 <%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
 <!DOCTYPE html>
 <html>
-  
-  <%@ include file="/include/header.jsp" %>
-  
+  <head>
+  <%@ include file="/include/header.jsp" %>  
+  </head>
   <body>
     <div id="all">
       <!-- Top bar-->
@@ -360,7 +360,7 @@
       </section>
      
      
-     <%@ include file="/include/footer.jsp" %>
+      <%@ include file="/include/footer.jsp" %>
      
     </div>
   <%@ include file="/include/script.jsp" %>

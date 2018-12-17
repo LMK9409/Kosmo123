@@ -9,6 +9,7 @@
 	 
 	<typeAliases>
 		<typeAlias alias="orderVO" type="com.jang.order.orderVO"  />
+		<typeAlias alias="PointVO" type="com.jang.point.PointVO"  />
 	</typeAliases>
 	
 
@@ -28,6 +29,7 @@
 	
 	<mappers>
 		<mapper resource="config/mybatis/order-map.xml" />	
+		<mapper resource="config/mybatis/point-recharge.xml" />	
 	</mappers>
 	
 
