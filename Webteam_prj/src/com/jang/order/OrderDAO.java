@@ -25,7 +25,7 @@ public class OrderDAO {
     * @param userId
     * @return
     */
-   public  ArrayList<orderVO> select() {
+   public  ArrayList<orderVO> selectAll() {
       SqlSession conn =null;
       ArrayList<orderVO> resList =null;
       try {
@@ -36,6 +36,18 @@ public class OrderDAO {
       }
       return resList;
    }
+   
+   public  orderVO selectOne(int oseq) {
+	      SqlSession conn =null;
+	      orderVO res =null;
+	      try {
+	         conn = MyBatisFactory.getFactory().openSession(); 
+	         res =(orderVO)conn.selectOne("orderNameSpace.orderOne",oseq);   
+	      }catch(Exception e) {
+	    	  conn.close();
+	      }
+	      return res;
+	   }
    
    
 }

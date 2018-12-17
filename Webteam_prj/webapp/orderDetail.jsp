@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Universal - All In 1 Template</title>
     <meta name="description" content="">
@@ -35,45 +33,9 @@
     <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-        <script>
-        $(document).ready(function(){
-				
-	    	$.ajax({                         //의뢰 리스트 ajax로 불러오는부분
-  				url:"/OrderList",
-  				type:"post",
-  				success:function(res){
-  					
-  					console.log(res);
-  					var reshtml ="<table class='table table-hover'>";
-  					reshtml+="<thead>";
-  					reshtml+="<tr><th>닉네임</th><th>날짜</th><th>제목</th><th>포인트</th><th>수주하기</th></tr>";
-  					reshtml+="</thead>";
-  					reshtml+="<tbody>";
-  					 $.each(res, function(index, vv){
-     						reshtml+="<tr>";
-     						reshtml+="<th>"+vv.mNickName+"</th>";
-     						reshtml+="<td>"+vv.oRegdate+"</td>";
-     						reshtml+="<td>"+vv.oTitle+"</td>";
-     					    reshtml +="<td><span class='badge badge-info'>"+vv.oPoint+"</span></td>";
-     						reshtml+="<td><a href='/orderDetail?seq="+vv.oSeq+"' class='btn btn-template-outlined btn-sm'>수주하기</a></td>";
-     						reshtml+="</tr>";
-  				  });
-  					reshtml+="</tbody>"; 
-  					reshtml+="</table>";
-  				 	$(".table-responsive").html(reshtml); 
-  				}
-  			})
-    /*     $("#viewAllBtn").click(function(){   
-          }); */
-      		
-	    	
-	    	
-      })
-      </script>
   </head>
   <body>
     <div id="all">
@@ -331,75 +293,73 @@
         <div class="container">
           <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-              <h1 class="h2">Tabs</h1>
+              <h1 class="h2">White Blouse Armani</h1>
             </div>
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">Pagination</li>
+                <li class="breadcrumb-item"><a href="shop-category.html">Ladies</a></li>
+                <li class="breadcrumb-item"><a href="shop-category.html">Tops</a></li>
+                <li class="breadcrumb-item active">White Blouse Armani</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <section class="bar">
+      <div id="content">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <!-- MENUS AND WIDGETS -->
-              <div class="panel panel-default sidebar-menu with-icons">
-                <div class="panel-heading">
-                  <h3 class="h4 panel-title">Categories</h3>
+          <div class="row bar">
+            <!-- LEFT COLUMN _________________________________________________________-->
+            <div class="col-lg-12">
+              <p class="lead">${RES_VO.oTitle}</p>
+              <p class="goToDescription"><a href="#details" class="scroll-to text-uppercase">Scroll to product details, material & care and sizing</a></p>
+              <div id="productMain" class="row">
+                <div class="col-sm-6">
+                  <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
+                    <div> <img src="img/detailbig1.jpg" alt="" class="img-fluid"></div>
+                    <div> <img src="img/detailbig2.jpg" alt="" class="img-fluid"></div>
+                    <div> <img src="img/detailbig3.jpg" alt="" class="img-fluid"></div>
+                  </div>
                 </div>
-                <div class="panel-body">
-                  <ul class="nav nav-pills flex-column text-sm">
-                    <li class="nav-item"><a href="template-accordions.html" class="nav-link active">Accordions</a></li>
-                    <li class="nav-item"><a href="template-alerts.html" class="nav-link">Alerts</a></li>
-                    <li class="nav-item"><a href="template-buttons.html" class="nav-link">Buttons</a></li>
-                    <li class="nav-item"><a href="template-content-boxes.html" class="nav-link">Content boxes</a></li>
-                    <li class="nav-item"><a href="template-blocks.html" class="nav-link">Horizontal blocks</a></li>
-                    <li class="nav-item"><a href="template-pagination.html" class="nav-link">Pagination</a></li>
-                    <li class="nav-item"><a href="template-tabs.html" class="nav-link">Tabs</a></li>
-                    <li class="nav-item"><a href="template-typography.html" class="nav-link">Typography</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-9">
-              <div id="pagination" class="wp-example">
-                <h3 class="section-title">의뢰게시판</h3>
-                <div class="row">
-                  <div class="col-md-12">
-              <div class="box mt-0 mb-lg-0">
-              
-                <div class="table-responsive">
-                  
+                <div class="col-sm-6">
+                  <div class="box">
+                    <form>
+                      <div class="sizes">
+                        <h3>의뢰 포인트</h3>
+                      </div>
+                      <p class="price">${RES_VO.oPoint}  포인트</p>
+                      
+                    </form>
+                  </div>
+                  <div data-slider-id="1" class="owl-thumbs">
+                    <button class="owl-thumb-item"><img src="img/detailsquare.jpg" alt="" class="img-fluid"></button>
+                    <button class="owl-thumb-item"><img src="img/detailsquare2.jpg" alt="" class="img-fluid"></button>
+                    <button class="owl-thumb-item"><img src="img/detailsquare3.jpg" alt="" class="img-fluid"></button>
+                  </div>
+                  <p class="text-center">
+                        <button type="submit" class="col-lg-12 btn btn-template-outlined"><i class="fa fa-shopping-cart"></i>수주하기</button><br><br><br>
+                        <button type="submit" class="col-md-12 btn btn-template-outlined"><i class="fa fa-shopping-cart"></i>신고하기</button>
+                      </p>
                 </div>
                 
               </div>
-                   
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination pagination-sm">
-                        <li class="page-item"><a href="#" class="page-link">«</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">»</a></li>
-                      </ul>
-                    </nav>
-                    <ul class="pager list-unstyled d-flex align-items-center justify-content-between mb-0">
-                      <li class="previous"><a href="#" class="btn btn-template-outlined">← Older</a></li>
-                      <li class="next"><a href="#" class="btn btn-template-outlined">Newer →</a></li>
-                    </ul>
-                  </div>
+              <div id="details" class="box mb-4 mt-4">
+                <p>상세 내용</p>
+                <p>${RES_VO.oText}</p>
+                <blockquote class="blockquote">
+                  <p class="mb-0"><em>의뢰자 위치</em></p>
+                </blockquote>
+                <div name="GoogleMap" id="GoogleMap" class="GoogleMap">
                 </div>
               </div>
+             
+           
+              
             </div>
+        
           </div>
         </div>
-      </section>
+      </div>
       <!-- GET IT-->
       <div class="get-it">
         <div class="container">
@@ -499,5 +459,32 @@
     <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
     <script src="js/front.js"></script>
+     <script src="http://maps.google.com/maps/api/js?key=AIzaSyDWnF3ONfPsUtJqoV-RZGwNm_abXeRkcQk&amp;sensor=true"></script> 
+     <script src="vendor/modules/gmaps.js"></script> 
+     <script>
+       // init map
+       var simple_map = new GMaps({
+            div: '#GoogleMap',
+            lat: ${RES_VO.oLat},
+            lng: ${RES_VO.oLng},
+          
+       });
+       
+       simple_map.addMarker({
+    	   lat: ${RES_VO.oLat},
+           lng: ${RES_VO.oLng},
+          
+           
+           click: function(e){
+             if(console.log)
+               console.log(e);
+             alert('You clicked in this marker');
+           },
+           mouseover: function(e){
+             if(console.log)
+               console.log(e);
+           }
+       });
+     </script>
   </body>
 </html>

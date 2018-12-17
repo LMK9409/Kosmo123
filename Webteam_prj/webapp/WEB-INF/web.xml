@@ -10,7 +10,6 @@
     <servlet-class>com.jang.common.MyBatisFactory</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  
   <jsp-config>
     <taglib>
       <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
@@ -21,7 +20,6 @@
       <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
     </taglib>
   </jsp-config>
-  
   <error-page>
     <exception-type>java.lang.Throwable</exception-type>
     <location>/404.jsp</location>
