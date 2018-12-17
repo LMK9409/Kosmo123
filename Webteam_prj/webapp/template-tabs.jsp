@@ -380,9 +380,22 @@
                         <li class="page-item"><a href="#" class="page-link">»</a></li>
                       </ul>
                     </nav>
-                    <style id="sun" >.btn {float: right;}</style>
+                   
+ <form id="myform">
+	<select class="searchfree" name="searchColumn" id="searchColumn">
+		<option value="ename">닉네임</option>
+		<option value="deptno">제목</option>
+	</select>
+	<input type="text" placeholder="Search.." name="searchStr" id="searchStr" class="searchfree">
+	
+	<!-- 버튼류 --> 
+	<button type="button" class="btn btn-sm btn-primary">검색</button>
+	<style id="sun" >.btn-lg {float: right;}</style>
                     <button type="button" id="sun" class="btn btn-lg btn-primary" >글쓰기</button><br><br>
                     
+	<!-- <input type="button" value="일반검색버튼" onClick="httpAjax()"> -->
+</form>
+					
                      </div>
           </div>
         </div>

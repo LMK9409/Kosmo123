@@ -50,7 +50,7 @@
   					console.log(res);
   					var reshtml ="<table class='table table-hover'>";
   					reshtml+="<thead>";
-  					reshtml+="<tr><th>닉네임</th><th>날짜</th><th>제목</th><th>포인트</th><th>수주하기</th></tr>";
+  					reshtml+="<tr><th>닉네임</th><th>날짜</th><th>제목</th><th>포인트</th><th>상세보기</th></tr>";
   					reshtml+="</thead>";
   					reshtml+="<tbody>";
   					 $.each(res, function(index, vv){
@@ -347,25 +347,9 @@
           <div class="row">
             <div class="col-lg-3">
               <!-- MENUS AND WIDGETS -->
-              <div class="panel panel-default sidebar-menu with-icons">
-                <div class="panel-heading">
-                  <h3 class="h4 panel-title">Categories</h3>
-                </div>
-                <div class="panel-body">
-                  <ul class="nav nav-pills flex-column text-sm">
-                    <li class="nav-item"><a href="template-accordions.html" class="nav-link active">Accordions</a></li>
-                    <li class="nav-item"><a href="template-alerts.html" class="nav-link">Alerts</a></li>
-                    <li class="nav-item"><a href="template-buttons.html" class="nav-link">Buttons</a></li>
-                    <li class="nav-item"><a href="template-content-boxes.html" class="nav-link">Content boxes</a></li>
-                    <li class="nav-item"><a href="template-blocks.html" class="nav-link">Horizontal blocks</a></li>
-                    <li class="nav-item"><a href="template-pagination.html" class="nav-link">Pagination</a></li>
-                    <li class="nav-item"><a href="template-tabs.html" class="nav-link">Tabs</a></li>
-                    <li class="nav-item"><a href="template-typography.html" class="nav-link">Typography</a></li>
-                  </ul>
-                </div>
-              </div>
+           
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-12">
               <div id="pagination" class="wp-example">
                 <h3 class="section-title">의뢰게시판</h3>
                 <div class="row">
@@ -387,12 +371,15 @@
                         <li class="page-item"><a href="#" class="page-link">4</a></li>
                         <li class="page-item"><a href="#" class="page-link">5</a></li>
                         <li class="page-item"><a href="#" class="page-link">»</a></li>
+                       
+                       
                       </ul>
+                         <style id="orderBtn" >.btn {float: right;}</style>
+                    <button type="button" id="orderBtn" class="btn btn-lg btn-primary" >의뢰하기</button>
+                         
                     </nav>
-                    <ul class="pager list-unstyled d-flex align-items-center justify-content-between mb-0">
-                      <li class="previous"><a href="#" class="btn btn-template-outlined">← Older</a></li>
-                      <li class="next"><a href="#" class="btn btn-template-outlined">Newer →</a></li>
-                    </ul>
+               				 
+                     	   
                   </div>
                 </div>
               </div>
