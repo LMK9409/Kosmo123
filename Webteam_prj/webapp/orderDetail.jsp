@@ -468,7 +468,7 @@
             lat: ${RES_VO.oLat},
             lng: ${RES_VO.oLng},
           
-       });
+       }); 
        
        simple_map.addMarker({
     	   lat: ${RES_VO.oLat},
