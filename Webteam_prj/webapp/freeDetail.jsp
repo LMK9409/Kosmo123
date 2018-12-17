@@ -321,7 +321,7 @@
                       <p class="author-category">작성자</p>
                       <p class="date-comments">날짜</p>
                     </div>
-                  </div>
+                  </div> 
                 <p class="lead">텍스트영역임</p>
                 <p class="text-sm">작성일 뿌릴곳</p>
                 <div class="heading">

@@ -10,7 +10,7 @@
       <result property="mNickName" column="m_nickname" />
       <result property="fYn" column="f_yn" />
     </resultMap>
-    
+     
 <sql id="commonSelect">user_name, user_gubun</sql>
     
     <select id="freeAll" resultMap="freeMap">

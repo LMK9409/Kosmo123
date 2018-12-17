@@ -1,5 +1,5 @@
 package com.jang.free;
-
+ 
 public class FreeVO {
 	private int fSeq;
 	private String fTitle;
