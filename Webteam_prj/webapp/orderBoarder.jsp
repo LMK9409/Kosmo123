@@ -62,7 +62,7 @@
      						reshtml+="<td><a href='customer-order.html' class='btn btn-template-outlined btn-sm'>수주하기</a></td>";
      						reshtml+="</tr>";
   				  });
-  					reshtml+="</tbody>";
+  					reshtml+="</tbody>"; 
   					reshtml+="</table>";
   				 	$(".table-responsive").html(reshtml); 
   				}
