@@ -385,7 +385,7 @@
 	<select class="searchfree" name="searchColumn" id="searchColumn">
 		<option value="ename">닉네임</option>
 		<option value="deptno">제목</option>
-	</select>
+	</select> 
 	<input type="text" placeholder="Search.." name="searchStr" id="searchStr" class="searchfree">
 	
 	<!-- 버튼류 --> 
