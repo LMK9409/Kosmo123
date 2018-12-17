@@ -429,7 +429,7 @@
                         <li class="page-item"><a href="#" class="page-link">5</a></li>
                         <li class="page-item"><a href="#" class="page-link">»</a></li>
                       </ul>
-                    </nav> 
+                    </nav>  
                 <form id="myform">
 	<select class="searchfree" name="searchColumn" id="searchColumn">
 		<option value="ename">닉네임</option>

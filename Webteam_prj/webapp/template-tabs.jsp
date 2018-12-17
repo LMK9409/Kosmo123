@@ -381,7 +381,7 @@
                       </ul>
                     </nav>
                    
- <form id="myform">
+ <form id="myform"> 
 	<select class="searchfree" name="searchColumn" id="searchColumn">
 		<option value="ename">닉네임</option>
 		<option value="deptno">제목</option>
