@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  
+<mapper namespace="userNameSpace">
+<mapper namespace="com.biz.mapper">
+ -->
+<mapper namespace="pointNameSpace">
+
+   <resultMap id="pointMap" type="com.jang.point.PointVO">
+      <id property="ioSeq" column="io_seq" />
+      <result property="ioPoint" column="io_point" />
+      <result property="ioRegdate" column="io_regdate" />
+      <result property="mSeq" column="m_seq" />
+      <result property="ioGubun" column="io_gubun" />
+      </resultMap> 
+   
+<!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
+      <id property="pseq" column="pseq" />
+      <result property="ppath" column="ppath" />
+      <result property="pname" column="pname" />
+      <result property="sysname" column="syspname" />
+      <result property="sseq" column="sseq" />
+      <result property="pchk_yn" column="pchk_yn" /> 
+   </resultMap>
+
+   <resultMap id="shopReplyMap" type="com.biz.shop.ReplyVO">
+      <id property="rseq" column="rseq" />
+      <result property="reply" column="reply" />
+      <result property="regid" column="regid" />
+      <result property="regdate" column="regdate" />
+      <result property="sseq" column="sseq" />
+   </resultMap>
+ -->
+
+    <insert id="pointRecharge" parameterType="com.jang.point.PointVO">
+    insert into point_log values(11, #{ioPoint}, sysdate, #{mSeq},(select code_list_seq from code_list 
+	where code_list_gubun_detail='충전'))
+    </insert>
+
+</mapper>   
