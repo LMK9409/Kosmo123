@@ -360,7 +360,7 @@ $(document).ready(function(){
                 </div>
                  <div class="panel-heading">
                   <h3 class="h4 panel-title">고객센터</h3>
-                </div>
+                </div> 
                 <div class="panel-body">
                   <ul class="nav nav-pills flex-column text-sm">
                     <li class="nav-item"><a href="customer-orders.html" class="nav-link"><i class="fa fa-list"></i>FAQ</a></li>

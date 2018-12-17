@@ -20,9 +20,9 @@ public class PointRechargeServlet extends HttpServlet {
 		PointDAO dao = new PointDAO();
 		PointVO vo = new PointVO();
 		vo.setmSeq(4);
-		vo.setIoPoint(point);
+		vo.setIoPoint(point); 
 		int insertRes = dao.insert(vo);
-		System.out.println("123456");
+		System.out.println("123456"); 
 		if(insertRes == 1) {
 			System.out.println("성공");
 			response.sendRedirect("customer-account.jsp");

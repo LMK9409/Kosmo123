@@ -14,7 +14,7 @@ public class PointDAO {
 			conn.commit();
 		}finally {
 			conn.close();
-		}
+		} 
 		return res;
-	}
+	} 
 }

@@ -5,7 +5,7 @@ public class PointVO {
 	private int ioPoint;
 	private String ioRegdate;
 	private int mSeq;
-	private String ioGubun;
+	private String ioGubun; 
 	public int getIoSeq() {
 		return ioSeq;
 	}

@@ -13,7 +13,7 @@
       <result property="ioRegdate" column="io_regdate" />
       <result property="mSeq" column="m_seq" />
       <result property="ioGubun" column="io_gubun" />
-      </resultMap>
+      </resultMap> 
    
 <!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
       <id property="pseq" column="pseq" />
