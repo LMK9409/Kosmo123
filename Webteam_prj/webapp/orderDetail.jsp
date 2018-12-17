@@ -349,7 +349,7 @@
                 <blockquote class="blockquote">
                   <p class="mb-0"><em>의뢰자 위치</em></p>
                 </blockquote>
-                <div name="GoogleMap" id="GoogleMap" class="GoogleMap">
+                <div id="simple-map" class="simple-map" style="height:450px;"></div>
                 </div>
               </div>
              
@@ -459,32 +459,22 @@
     <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
     <script src="js/front.js"></script>
-     <script src="http://maps.google.com/maps/api/js?key=AIzaSyDWnF3ONfPsUtJqoV-RZGwNm_abXeRkcQk&amp;sensor=true"></script> 
-     <script src="vendor/modules/gmaps.js"></script> 
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmubPngLb1Im7cyNyDdDMyGRJkDyXBxYA&callback=initMap">
+    </script>
      <script>
        // init map
-       var simple_map = new GMaps({
-            div: '#GoogleMap',
-            lat: ${RES_VO.oLat},
-            lng: ${RES_VO.oLng},
-          
-       }); 
-       
-       simple_map.addMarker({
-    	   lat: ${RES_VO.oLat},
-           lng: ${RES_VO.oLng},
-          
-           
-           click: function(e){
-             if(console.log)
-               console.log(e);
-             alert('You clicked in this marker');
-           },
-           mouseover: function(e){
-             if(console.log)
-               console.log(e);
-           }
-       });
+       function initMap() {
+  // The location of Uluru
+  var center = {lat: ${RES_VO.oLat}, lng: ${RES_VO.oLng}};
+
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('simple-map'), {zoom: 15, center: center});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: gasan, map: map});
+
+}
      </script>
   </body>
 </html>
