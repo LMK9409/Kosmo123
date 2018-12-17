@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
   <head>
@@ -70,7 +73,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 id="login-modalLabel" class="modal-title">Customer Login</h4>
-              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">Ã</span></button>
             </div>
             <div class="modal-body">
               <form action="customer-orders.html" method="get">
@@ -85,7 +88,7 @@
                 </p>
               </form>
               <p class="text-center text-muted">Not registered yet?</p>
-              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
+              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1Â minute and gives you access to special discounts and much more!</p>
             </div>
           </div>
         </div>
@@ -298,7 +301,7 @@
               <ul class="breadcrumb d-flex justify-content-end">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="free.jsp">자유게시판</a></li>
-                <li class="breadcrumb-item active">작성하기</li>
+                <li class="breadcrumb-item active">글작성</li>
               </ul>
             </div>
           </div>
@@ -310,12 +313,12 @@
             <!-- LEFT COLUMN _________________________________________________________-->
             <div id="blog-post" class="col-md-12">
                 <div id="comment-form">
-                <h4 class="text-uppercase">게시글 작성</h4>
+                <h4 class="text-uppercase">글 작성하기</h4>
                 <form>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="name">제목 <span class="required text-primary">*</span></label>
+                        <label for="name">제목<span class="required text-primary">*</span></label>
                         <input id="name" type="text" class="form-control">
                       </div>
                     </div>
@@ -323,14 +326,14 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="form-group">
-                        <label for="comment">내용 <span class="required text-primary">*</span></label>
+                        <label for="comment">글내용<span class="required text-primary">*</span></label>
                         <textarea id="comment" rows="4" class="form-control"></textarea>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-12 text-right">
-                      <button class="btn btn-template-outlined"><i class="fa fa-comment-o"></i> 작성확인</button>
+                      <button class="btn btn-template-outlined"><i class="fa fa-comment-o"></i>작성확인</button>
                     </div>
                   </div>
                 </form>
