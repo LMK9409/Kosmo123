@@ -431,7 +431,7 @@
                       </ul>
                     </nav>
                        <style id="sun" >.btn {float: right;}</style>
-                    <button type="button" id="sun" class="btn btn-lg btn-primary" >Button Primary</button><br><br>
+                    <button type="button" id="sun" class="btn btn-lg btn-primary" >글쓰기</button><br><br>
                     
                     <ul class="pager list-unstyled d-flex align-items-center justify-content-between mb-0">
                       <li class="previous"><a href="#" class="btn btn-template-outlined">← Older</a></li>

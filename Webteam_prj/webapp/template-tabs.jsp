@@ -381,7 +381,7 @@
                       </ul>
                     </nav>
                     <style id="sun" >.btn {float: right;}</style>
-                    <button type="button" id="sun" class="btn btn-lg btn-primary" >Button Primary</button><br><br>
+                    <button type="button" id="sun" class="btn btn-lg btn-primary" >글쓰기</button><br><br>
                     
                      </div>
           </div>
