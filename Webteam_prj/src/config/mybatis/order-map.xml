@@ -55,8 +55,6 @@
    </resultMap>
  -->
 
-    <sql id="commonSelect">user_name, user_gubun</sql>
-    
     <select id="orderAll" resultMap="orderMap">
       select *
       from order_board o,member m

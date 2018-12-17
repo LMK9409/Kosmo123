@@ -17,7 +17,7 @@ public class MyBatisFactory extends HttpServlet {
    private static SqlSessionFactory factory = null;
    
    public void init(ServletConfig config) throws ServletException {
-      System.out.println("MyBatisFactory init 호출");
+      System.out.println("MyBatisFactory init ");
       
       String path = "config/mybatis/config-mybatis.xml";
       Reader reader;
