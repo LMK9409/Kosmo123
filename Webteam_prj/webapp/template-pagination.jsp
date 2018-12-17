@@ -60,14 +60,9 @@
      						reshtml+="</div>";
      						reshtml+="</li>"; */
   				 /* }); */
-
   				/* 	$(".list-unstyled.list-unstyled-border").html(reshtml); */
-  					
   				}
   			})
-
-      	  
-      	  
     /*     $("#viewAllBtn").click(function(){   
           }); */
       		
