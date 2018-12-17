@@ -43,7 +43,7 @@ public class OrderListServlet extends HttpServlet {
 		
 		OrderDAO oDAO = new OrderDAO();
 	    ArrayList<orderVO> list=new ArrayList<orderVO>();
-		list=oDAO.select();
+		list=oDAO.selectAll();
 		
 		Gson gson= new Gson();
 		response.setContentType("application/json; encoding=UTF-8");

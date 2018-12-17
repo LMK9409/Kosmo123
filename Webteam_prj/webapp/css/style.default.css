@@ -496,12 +496,15 @@ ul.social a.email {
 
 .form-control {
   border-radius: 0;
+   bottom-width: 150 px;
+   height: 150 px;
 }
 
 .form-control:focus {
   border-color: #4fbfa8;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(79, 191, 168, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(79, 191, 168, 0.25);
+  
 }
 
 .form-group label {
@@ -1851,6 +1854,7 @@ table tr td {
 
 #basket thead th {
   border-top: none;
+ 
 }
 
 #basket tfoot th {

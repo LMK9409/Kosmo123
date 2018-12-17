@@ -12,7 +12,7 @@
         <br/>
         <input id="inputMessage" type="text"/>
         <input type="submit" value="send" onclick="send()" />
-    </fieldset>
+    </fieldset> 
 </body>
 <script type="text/javascript">
 

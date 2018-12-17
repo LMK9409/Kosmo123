@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
   <head>
@@ -70,7 +73,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 id="login-modalLabel" class="modal-title">Customer Login</h4>
-              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">Ã</span></button>
             </div>
             <div class="modal-body">
               <form action="customer-orders.html" method="get">
@@ -85,7 +88,7 @@
                 </p>
               </form>
               <p class="text-center text-muted">Not registered yet?</p>
-              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
+              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1Â minute and gives you access to special discounts and much more!</p>
             </div>
           </div>
         </div>
@@ -292,12 +295,12 @@
         <div class="container">
           <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-              <h1 class="h2">Tabs</h1>
+              <h1 class="h2">자유게시판</h1>
             </div>
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">Pagination</li>
+                <li class="breadcrumb-item active">의뢰게시판</li>
               </ul>
             </div>
           </div>
@@ -310,70 +313,93 @@
               <!-- MENUS AND WIDGETS -->
               <div class="panel panel-default sidebar-menu with-icons">
                 <div class="panel-heading">
-                  <h3 class="h4 panel-title">Categories</h3>
+                  <h3 class="h4 panel-title">게시판</h3>
                 </div>
                 <div class="panel-body">
                   <ul class="nav nav-pills flex-column text-sm">
-                    <li class="nav-item"><a href="template-accordions.html" class="nav-link active">Accordions</a></li>
-                    <li class="nav-item"><a href="template-alerts.html" class="nav-link">Alerts</a></li>
-                    <li class="nav-item"><a href="template-buttons.html" class="nav-link">Buttons</a></li>
-                    <li class="nav-item"><a href="template-content-boxes.html" class="nav-link">Content boxes</a></li>
-                    <li class="nav-item"><a href="template-blocks.html" class="nav-link">Horizontal blocks</a></li>
-                    <li class="nav-item"><a href="template-pagination.html" class="nav-link">Pagination</a></li>
-                    <li class="nav-item"><a href="template-tabs.html" class="nav-link">Tabs</a></li>
-                    <li class="nav-item"><a href="template-typography.html" class="nav-link">Typography</a></li>
-                  </ul>
+                     <li class="nav-item"><a href="template-pagination.html" class="nav-link">의뢰게시판</a></li>
+                    <li class="nav-item"><a href="template-tabs.html" class="nav-link">자유게시판</a></li>
+                    </ul>
                 </div>
               </div>
             </div>
-            <div class="col-lg-9">
-              <h3 class="section-title">Tabs</h3>
-              <div class="row">
-                <div class="col-md-6">
-                  <nav id="myTab" role="tablist" class="nav nav-tabs"><a id="tab4-1-tab" data-toggle="tab" href="#tab4-1" role="tab" aria-controls="tab4-1" aria-selected="true" class="nav-item nav-link active"> <i class="icon-star"></i>First tab</a><a id="tab4-2-tab" data-toggle="tab" href="#tab4-2" role="tab" aria-controls="tab4-2" aria-selected="false" class="nav-item nav-link">Second tab</a><a id="tab4-3-tab" data-toggle="tab" href="#tab4-3" role="tab" aria-controls="tab4-3" aria-selected="false" class="nav-item nav-link">Third tab</a></nav>
-                  <div id="nav-tabContent" class="tab-content">
-                    <div id="tab4-1" role="tabpanel" aria-labelledby="tab4-1-tab" class="tab-pane fade show active">This is tab one.</div>
-                    <div id="tab4-2" role="tabpanel" aria-labelledby="tab4-2-tab" class="tab-pane fade">This is tab two.</div>
-                    <div id="tab4-3" role="tabpanel" aria-labelledby="tab4-3-tab" class="tab-pane fade">This is tab three.</div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <nav id="myTab" role="tablist" class="nav nav-tabs"><a id="tab4-4-tab" data-toggle="tab" href="#tab4-4" role="tab" aria-controls="tab4-4" aria-selected="true" class="nav-item nav-link active"> <i class="icon-star"></i>First tab</a><a id="tab4-5-tab" data-toggle="tab" href="#tab4-5" role="tab" aria-controls="tab4-5" aria-selected="false" class="nav-item nav-link">Second tab</a><a id="tab4-6-tab" data-toggle="tab" href="#tab4-6" role="tab" aria-controls="tab4-6" aria-selected="false" class="nav-item nav-link">Third tab</a></nav>
-                  <div id="nav-tabContent" class="tab-content">
-                    <div id="tab4-4" role="tabpanel" aria-labelledby="tab4-4-tab" class="tab-pane fade show active">This is tab one.</div>
-                    <div id="tab4-5" role="tabpanel" aria-labelledby="tab4-5-tab" class="tab-pane fade">This is tab two.</div>
-                    <div id="tab4-6" role="tabpanel" aria-labelledby="tab4-6-tab" class="tab-pane fade">This is tab three.</div>
-                  </div>
+      <!--테이블-->
+    	<div class="col-lg-9">
+              <div id="pagination" class="wp-example">
+                <h3 class="section-title">자유게시판</h3>
+                <div class="row">
+                  <div class="col-md-12">
+              <div class="box mt-0 mb-lg-0">
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>닉네임</th>
+                        <th>날짜</th>
+                        <th>제목</th>
+                     </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>세존대완</th>
+                        <td>22/06/2013</td>
+                        <td>열어분 한글 쏴랑해주세요 땡큐 땡큐! 4딸라!4$!</td>
+                       </tr>
+                      <tr>
+                        <th>유저아뒤</th>
+                        <td>22/06/2013</td>
+                        <td>까만 탄밥위에 몰캉몰캉한 삼겹살 한덩이</td>
+                       </tr>
+                      <tr>
+                        <th>흥민전음</th> 
+                        <td>22/06/2013</td>
+                        <td>나랏말싸뮈 듕귁에달아 사맛디 아니할세 </td>
+                        </tr>
+                      <tr>
+                        <th>아베 신세계</th>
+                        <td>22/06/2013</td>
+                        <td>고쿠민사마타치노 오카게데 이마노 와타시가 이마스</td>
+                       </tr>
+                      <tr>
+                        <th>로날도 도람푸</th>
+                        <td>22/06/2013</td>
+                        <td>그뤠잇 어뭬리카 어겐~</td>
+                       </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <h3 class="mt-4">Tabs with nav pills</h3>
-              <ul id="pills-tab" role="tablist" class="nav nav-pills nav-justified">
-                <li class="nav-item"><a id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" class="nav-link">Web Design</a></li>
-                <li class="nav-item"><a id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false" class="nav-link active">Coding</a></li>
-                <li class="nav-item"><a id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false" class="nav-link">Consulting</a></li>
-                <li class="nav-item"><a id="pills-marketing-tab" data-toggle="pill" href="#pills-marketing" role="tab" aria-controls="pills-contact" aria-selected="false" class="nav-link">Marketing</a></li>
-              </ul>
-              <div id="pills-tabContent" class="tab-content">
-                <div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.<br>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
-                <div id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.<br>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
-                <div id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" class="tab-pane fade">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
-                <div id="pills-marketing" role="tabpanel" aria-labelledby="pills-marketing-tab" class="tab-pane fade">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.<br>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
-              </div>
-            </div>
+              <nav aria-label="Page navigation example">
+                      <ul class="pagination pagination-sm">
+                        <li class="page-item"><a href="#" class="page-link">«</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">»</a></li>
+                      </ul>
+                    </nav>
+                   
+ <form id="myform"> 
+	<select class="searchfree" name="searchColumn" id="searchColumn">
+		<option value="ename">닉네임</option>
+		<option value="deptno">제목</option>
+	</select> 
+	<input type="text" placeholder="Search.." name="searchStr" id="searchStr" class="searchfree">
+	 
+	<!-- 버튼류 --> 
+	<button type="button" class="btn btn-sm btn-primary">검색</button>
+	<style id="sun" >.btn-lg {float: right;}</style>
+                    <button type="button" id="sun" class="btn btn-lg btn-primary" >글쓰기</button><br><br>
+                    
+	<!-- <input type="button" value="일반검색버튼" onClick="httpAjax()"> -->
+</form>
+					
+                     </div>
           </div>
         </div>
       </section>
-      <!-- GET IT-->
-      <div class="get-it">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 text-center p-3">
-              <h3>Do you want cool website like this one?</h3>
-            </div>
-            <div class="col-lg-4 text-center p-3">   <a href="#" class="btn btn-template-outlined-white">Buy this template now</a></div>
-          </div>
-        </div>
-      </div>
       <!-- FOOTER -->
       <footer class="main-footer">
         <div class="container">
