@@ -387,12 +387,15 @@
                         <li class="page-item"><a href="#" class="page-link">4</a></li>
                         <li class="page-item"><a href="#" class="page-link">5</a></li>
                         <li class="page-item"><a href="#" class="page-link">»</a></li>
+                        <div class="text-center">
+                         <button type="submit" class="full-left btn btn-template-outlined">
+                         <i class="fa fa-shopping-cart"></i>의뢰하기</button>
+                         </div>
+                       
                       </ul>
                     </nav>
-                    <ul class="pager list-unstyled d-flex align-items-center justify-content-between mb-0">
-                      <li class="previous"><a href="#" class="btn btn-template-outlined">← Older</a></li>
-                      <li class="next"><a href="#" class="btn btn-template-outlined">Newer →</a></li>
-                    </ul>
+               				 
+                     	   
                   </div>
                 </div>
               </div>
