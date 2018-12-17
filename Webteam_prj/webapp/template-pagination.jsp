@@ -49,7 +49,7 @@
   					
   					console.log(res);
   					
-  					/* var reshtml="";
+  					 var reshtml="";
   					 $.each(res, function(index, vv){
      						reshtml+="<li class=\"media\">";
      						reshtml+="<img class=\"mr-3 rounded-circle\" width=\"50\" src=\"/cdir/"+vv.pname+"\" alt=\"avatar\">";
@@ -58,8 +58,8 @@
      					    reshtml +="<div class=\"media-title\"><a href=/shop_detail?sseq="+vv.sseq+">"+vv.sname+"</a></div> ";
      						reshtml+="<small>"+vv.sinfo+"</small>";
      						reshtml+="</div>";
-     						reshtml+="</li>"; */
-  				 /* }); */
+     						reshtml+="</li>";
+  				  });
   				/* 	$(".list-unstyled.list-unstyled-border").html(reshtml); */
   				}
   			})

@@ -7,7 +7,7 @@ public class orderVO {
 	private String oText;
 	private int oPoint;
 	private String oPicture;
-	private int mSeq;
+	private String mNickName;
 	private String oAddress;
 	private Double oLat;
 	private Double oLng;
@@ -51,11 +51,11 @@ public class orderVO {
 	public void setoPicture(String oPicture) {
 		this.oPicture = oPicture;
 	}
-	public int getmSeq() {
-		return mSeq;
+	public String getmNickName() {
+		return mNickName;
 	}
-	public void setmSeq(int mSeq) {
-		this.mSeq = mSeq;
+	public void setmNickName(String mNickName) {
+		this.mNickName = mNickName;
 	}
 	public String getoAddress() {
 		return oAddress;
