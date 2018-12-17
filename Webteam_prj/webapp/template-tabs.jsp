@@ -387,7 +387,7 @@
 		<option value="deptno">제목</option>
 	</select> 
 	<input type="text" placeholder="Search.." name="searchStr" id="searchStr" class="searchfree">
-	
+	 
 	<!-- 버튼류 --> 
 	<button type="button" class="btn btn-sm btn-primary">검색</button>
 	<style id="sun" >.btn-lg {float: right;}</style>
