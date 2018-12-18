@@ -25,8 +25,8 @@
                 <li class="breadcrumb-item active">White Blouse Armani</li>
               </ul>
             </div>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </div>
       <div id="content">
         <div class="container">

@@ -5,7 +5,7 @@ public class FreeVO {
 	private String fTitle;
 	private String fText;
 	private String fRegdate;
-	private String mNickName;
+	private String mNickName;  
 	private String fYn;
 	public int getfSeq() {
 		return fSeq;
