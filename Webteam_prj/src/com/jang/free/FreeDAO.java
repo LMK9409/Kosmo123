@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.jang.common.MyBatisFactory;
 import com.jang.free.FreeVO;
 
-public class FreeDAO { 
+public class FreeDAO {  
 	public ArrayList<FreeVO> selectAll(){
 		SqlSession conn=null;
 		ArrayList<FreeVO> resList = null;

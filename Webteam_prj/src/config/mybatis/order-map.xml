@@ -37,6 +37,21 @@
       <result property="orderGubun" column="order_gubun" />
    </resultMap>
    
+    <resultMap id="orderMap" type="com.jang.order.orderVO">
+      <id property="oSeq" column="o_seq" />
+      <result property="oTitle" column="o_title" />
+      <result property="oRegdate" column="o_regdate" />
+      <result property="oText" column="o_text" />
+      <result property="oPoint" column="o_point" />
+      <result property="oPicture" column="o_picture" />
+      <result property="mNickName" column="m_nickname" />
+      <result property="oAddress" column="o_address" />
+      <result property="oLat" column="o_lat" />
+      <result property="oLng" column="o_lng" />
+      <result property="kSeq" column="k_seq" />
+      <result property="orderGubun" column="order_gubun" />
+   </resultMap>
+   
 <!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
       <id property="pseq" column="pseq" />
       <result property="ppath" column="ppath" />
@@ -64,8 +79,13 @@
     <select id="orderOne" parameterType="Integer" resultMap="orderMap">
       select *
       from order_board o,member m
-      where m.m_seq=o.m_seq and o.o_seq=${value}
+      where m.m_seq=o.m_seq and o.o_seq=${value} 
     </select>
+    
+    <insert id="orderInsert" parameterType="orderMap">
+        insert into reply_info(rseq,reply,regid,regdate,sseq)
+        values(reply_seq.nextval,#{reply},#{regid},sysdate,#{sseq}) 
+    </insert>
     
    
 </mapper>   

@@ -10,7 +10,7 @@
       <result property="mNickName" column="m_nickname" />
       <result property="fYn" column="f_yn" />
     </resultMap> 
-     
+      
     <select id="freeAll" resultMap="freeMap">
       select *
       from free_board f,member m

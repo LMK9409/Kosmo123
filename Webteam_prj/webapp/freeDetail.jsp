@@ -33,7 +33,7 @@
           <div class="row">
             <div class="col-lg-12">
               <section class="bar">
-               
+                
                 <div class="heading">
                   <h2>자유게쉬판</h2>
                 </div>
