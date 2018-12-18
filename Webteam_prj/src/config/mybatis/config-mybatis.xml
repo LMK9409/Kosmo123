@@ -11,6 +11,7 @@
 		<typeAlias alias="orderVO" type="com.jang.order.orderVO"  />
 		<typeAlias alias="PointVO" type="com.jang.point.PointVO"  />
 		<typeAlias alias="freeVO" type="com.jang.free.FreeVO"  />
+		<typeAlias alias="QuestionVO" type="com.jang.qna.QuestionVO"  />
 		<!--  <typeAlias alias="freeComVO" type="com.jang.free.FreeComVO"  />-->
 	</typeAliases>
 	  
@@ -33,7 +34,7 @@
 		<mapper resource="config/mybatis/order-map.xml" />	
 		<mapper resource="config/mybatis/point-recharge.xml" />
 		<mapper resource="config/mybatis/free-map.xml" />	
-			
+		<mapper resource="config/mybatis/question-map.xml" />	
 	</mappers>
 	
 

@@ -2,132 +2,132 @@ package com.jang.qna;
 
 public class MemberVO {
 
-	private int m_seq;
-	private String m_nickname;
-	private String m_from;
-	private String m_email;
-	private String m_account_number;
-	private String m_bank;
-	private String m_phone;
-	private String m_regdate;
-	private String m_address;
-	private int m_lat;
-	private int m_lng;
-	private String m_delete_yn;
-	private String m_gubun;
-	private String m_push;
-	private String m_sipcode;
-	private String m_address_detail;
-	private String m_account_holder;
-	private String grade_gubun;
+	private int mSeq;
+	private String mNickname;
+	private String mFrom;
+	private String mEmail;
+	private String mAccountNumber;
+	private String m_Bank;
+	private String mPhone;
+	private String mRegdate;
+	private String mAddress;
+	private int mLat;
+	private int mLng;
+	private String mDeleteYn;
+	private String mGubun;
+	private String mPush;
+	private String mSipcode;
+	private String mAddressDetail;
+	private String mAccountHolder;
+	private String gradeGubun;
+	public int getmSeq() {
+		return mSeq;
+	}
+	public void setmSeq(int mSeq) {
+		this.mSeq = mSeq;
+	}
+	public String getmNickname() {
+		return mNickname;
+	}
+	public void setmNickname(String mNickname) {
+		this.mNickname = mNickname;
+	}
+	public String getmFrom() {
+		return mFrom;
+	}
+	public void setmFrom(String mFrom) {
+		this.mFrom = mFrom;
+	}
+	public String getmEmail() {
+		return mEmail;
+	}
+	public void setmEmail(String mEmail) {
+		this.mEmail = mEmail;
+	}
+	public String getmAccountNumber() {
+		return mAccountNumber;
+	}
+	public void setmAccountNumber(String mAccountNumber) {
+		this.mAccountNumber = mAccountNumber;
+	}
+	public String getM_Bank() {
+		return m_Bank;
+	}
+	public void setM_Bank(String m_Bank) {
+		this.m_Bank = m_Bank;
+	}
+	public String getmPhone() {
+		return mPhone;
+	}
+	public void setmPhone(String mPhone) {
+		this.mPhone = mPhone;
+	}
+	public String getmRegdate() {
+		return mRegdate;
+	}
+	public void setmRegdate(String mRegdate) {
+		this.mRegdate = mRegdate;
+	}
+	public String getmAddress() {
+		return mAddress;
+	}
+	public void setmAddress(String mAddress) {
+		this.mAddress = mAddress;
+	}
+	public int getmLat() {
+		return mLat;
+	}
+	public void setmLat(int mLat) {
+		this.mLat = mLat;
+	}
+	public int getmLng() {
+		return mLng;
+	}
+	public void setmLng(int mLng) {
+		this.mLng = mLng;
+	}
+	public String getmDeleteYn() {
+		return mDeleteYn;
+	}
+	public void setmDeleteYn(String mDeleteYn) {
+		this.mDeleteYn = mDeleteYn;
+	}
+	public String getmGubun() {
+		return mGubun;
+	}
+	public void setmGubun(String mGubun) {
+		this.mGubun = mGubun;
+	}
+	public String getmPush() {
+		return mPush;
+	}
+	public void setmPush(String mPush) {
+		this.mPush = mPush;
+	}
+	public String getmSipcode() {
+		return mSipcode;
+	}
+	public void setmSipcode(String mSipcode) {
+		this.mSipcode = mSipcode;
+	}
+	public String getmAddressDetail() {
+		return mAddressDetail;
+	}
+	public void setmAddressDetail(String mAddressDetail) {
+		this.mAddressDetail = mAddressDetail;
+	}
+	public String getmAccountHolder() {
+		return mAccountHolder;
+	}
+	public void setmAccountHolder(String mAccountHolder) {
+		this.mAccountHolder = mAccountHolder;
+	}
+	public String getGradeGubun() {
+		return gradeGubun;
+	}
+	public void setGradeGubun(String gradeGubun) {
+		this.gradeGubun = gradeGubun;
+	}
 	
-	public int getM_seq() {
-		return m_seq;
-	}
-	public void setM_seq(int m_seq) {
-		this.m_seq = m_seq;
-	}
-	public String getM_nickname() {
-		return m_nickname;
-	}
-	public void setM_nickname(String m_nickname) {
-		this.m_nickname = m_nickname;
-	}
-	public String getM_from() {
-		return m_from;
-	}
-	public void setM_from(String m_from) {
-		this.m_from = m_from;
-	}
-	public String getM_email() {
-		return m_email;
-	}
-	public void setM_email(String m_email) {
-		this.m_email = m_email;
-	}
-	public String getM_account_number() {
-		return m_account_number;
-	}
-	public void setM_account_number(String m_account_number) {
-		this.m_account_number = m_account_number;
-	}
-	public String getM_bank() {
-		return m_bank;
-	}
-	public void setM_bank(String m_bank) {
-		this.m_bank = m_bank;
-	}
-	public String getM_phone() {
-		return m_phone;
-	}
-	public void setM_phone(String m_phone) {
-		this.m_phone = m_phone;
-	}
-	public String getM_regdate() {
-		return m_regdate;
-	}
-	public void setM_regdate(String m_regdate) {
-		this.m_regdate = m_regdate;
-	}
-	public String getM_address() {
-		return m_address;
-	}
-	public void setM_address(String m_address) {
-		this.m_address = m_address;
-	}
-	public int getM_lat() {
-		return m_lat;
-	}
-	public void setM_lat(int m_lat) {
-		this.m_lat = m_lat;
-	}
-	public int getM_lng() {
-		return m_lng;
-	}
-	public void setM_lng(int m_lng) {
-		this.m_lng = m_lng;
-	}
-	public String getM_delete_yn() {
-		return m_delete_yn;
-	}
-	public void setM_delete_yn(String m_delete_yn) {
-		this.m_delete_yn = m_delete_yn;
-	}
-	public String getM_gubun() {
-		return m_gubun;
-	}
-	public void setM_gubun(String m_gubun) {
-		this.m_gubun = m_gubun;
-	}
-	public String getM_push() {
-		return m_push;
-	}
-	public void setM_push(String m_push) {
-		this.m_push = m_push;
-	}
-	public String getM_sipcode() {
-		return m_sipcode;
-	}
-	public void setM_sipcode(String m_sipcode) {
-		this.m_sipcode = m_sipcode;
-	}
-	public String getM_address_detail() {
-		return m_address_detail;
-	}
-	public void setM_address_detail(String m_address_detail) {
-		this.m_address_detail = m_address_detail;
-	}
-	public String getM_account_holder() {
-		return m_account_holder;
-	}
-	public void setM_account_holder(String m_account_holder) {
-		this.m_account_holder = m_account_holder;
-	}
-	public String getGrade_gubun() {
-		return grade_gubun;
-	}
-	public void setGrade_gubun(String grade_gubun) {
-		this.grade_gubun = grade_gubun;
-	}
 	
 }

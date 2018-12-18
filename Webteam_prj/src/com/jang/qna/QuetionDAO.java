@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.session.SqlSession;
 
 import com.jang.common.MyBatisFactory;
+import com.jang.qna.QuestionVO;
 
 public class QuetionDAO {
 
@@ -14,15 +15,16 @@ public class QuetionDAO {
 	 * @return
 	 */
 	
-	public ArrayList<QuestionVO> questionSelect() {
-		ArrayList<QuestionVO> list = new ArrayList<QuestionVO>(); 
-		SqlSession conn =null;
+	public ArrayList<QuestionVO> selectAll() {
+		SqlSession conn = null;
+		ArrayList<QuestionVO> list = null;
 		try { 
 			conn = MyBatisFactory.getFactory().openSession();
-			list = (ArrayList)conn.selectList("QuestionNameSpace.memberquestionSelect");
-		} finally {
-			conn.close();
-		}
+			list = (ArrayList)conn.selectList("QuestionNameSpace.questionSelect");
+		} catch(Exception e) {
+			e.printStackTrace();
+	    	 conn.close();
+	      } 
 		return list;
 	}
 	
