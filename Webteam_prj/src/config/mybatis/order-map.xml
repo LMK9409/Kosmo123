@@ -57,9 +57,9 @@
  -->
 
     <select id="orderAll" resultMap="orderMap">
-      select *
+      select o.o_seq,o.o_title,o.o_point,to_char(o.o_regdate, 'mm/dd HH24:MI') as o_regdate,m.m_nickname
       from order_board o,member m
-      where m.m_seq=o.m_seq
+      where m.m_seq=o.m_seq and o.order_gubun='OM'
     </select>
     
     <select id="orderOne" parameterType="Integer" resultMap="orderMap">

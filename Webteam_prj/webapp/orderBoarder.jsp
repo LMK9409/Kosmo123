@@ -58,7 +58,7 @@
      						reshtml+="<th>"+vv.mNickName+"</th>";
      						reshtml+="<td>"+vv.oRegdate+"</td>";
      						reshtml+="<td>"+vv.oTitle+"</td>";
-     					    reshtml +="<td><span class='badge badge-info'>"+vv.oPoint+"</span></td>";
+     					    reshtml +="<td><span class='badge badge-info'>"+vv.oPoint+"P"+"</span></td>";
      						reshtml+="<td><a href='/orderDetail?seq="+vv.oSeq+"' class='btn btn-template-outlined btn-sm'>상세보기</a></td>";
      						reshtml+="</tr>";
   				  });

@@ -5,7 +5,6 @@
 <html>
   <head>
   <%@ include file="/include/header.jsp" %>
-  <script src="/modules/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
 	//jQuery 지원 : 첨부파일 미리보기 ---------------------
@@ -144,7 +143,7 @@ $(document).ready(function(){
     <!-- Javascript files-->
 <%@ include file="/include/script.jsp" %>
 
-    <script src="/modules/summernote/summernote-lite.js"></script>
+   
   <script src="http://maps.google.com/maps/api/js?key=AIzaSyDmubPngLb1Im7cyNyDdDMyGRJkDyXBxYA&libraries=places&callback=initAutocomplete" async defer></script>
   <script src="vendor/modules/gmaps.js"></script>
   <script>
