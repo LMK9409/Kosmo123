@@ -97,6 +97,9 @@
      <%@ include file="/include/footer.jsp" %> 
     </div>
     <%@ include file="/include/script.jsp" %>
+   <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmubPngLb1Im7cyNyDdDMyGRJkDyXBxYA&callback=initMap">
+    </script>
      <script>
        // init map
        function initMap() {
@@ -107,7 +110,7 @@
   var map = new google.maps.Map(
       document.getElementById('simple-map'), {zoom: 15, center: center});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: gasan, map: map});
+  var marker = new google.maps.Marker({position: center, map: map});
 
 }
      </script>

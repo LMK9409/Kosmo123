@@ -9,7 +9,6 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-
 import com.jang.common.MyBatisFactory;
 
 public class OrderDAO {
@@ -45,6 +44,22 @@ public class OrderDAO {
 	         res =(orderVO)conn.selectOne("orderNameSpace.orderOne",oseq);   
 	      }catch(Exception e) {
 	    	  conn.close();
+	      }
+	      return res;
+	   }
+   
+   public int orderInsert(orderVO ovo) {
+	      SqlSession conn =null;
+	      int res = 0;
+	      try { 
+	         //singleton : factory instance의 중앙 관리 
+	         //factory instance : private static
+	         //public getFacoty()를 통해 가져감
+	         conn = MyBatisFactory.getFactory().openSession();
+	         res = conn.insert("orderNameSpace.orderInsert", ovo);
+	         conn.commit();
+	      } finally {
+	         conn.close();
 	      }
 	      return res;
 	   }

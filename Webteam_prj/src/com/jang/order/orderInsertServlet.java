@@ -35,7 +35,26 @@ public class orderInsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String orderTitle = request.getParameter("orderTitle");
+		String orderPoint = request.getParameter("orderPoint");
+		String placename = request.getParameter("placename");
+		String lat = request.getParameter("lat");
+		String lng = request.getParameter("lng");
+		String orderText = request.getParameter("orderText");
+		
+		orderVO ovo= new orderVO();
+		ovo.setoTitle(orderTitle);
+		ovo.setoPoint(Integer.parseInt(orderPoint));
+		ovo.setoAddress(placename);
+		ovo.setoLat(Double.parseDouble(lat));
+		ovo.setoLng(Double.parseDouble(lng));
+		ovo.setoText(orderText);
+		
+		OrderDAO odao= new OrderDAO();
+		if(odao.orderInsert(ovo)==1)
+		{
+			System.out.println("insert Done.....");
+		}
 	}
 
 }

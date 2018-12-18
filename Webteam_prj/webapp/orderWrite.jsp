@@ -14,7 +14,6 @@ $(document).ready(function(){
         var id = $("#user_id").val();
         var pw = $("#user_pw").val();
         var pw2 =  $("#user_pw2").val();
-        var agree = $("[id='agree']:checked").val();
         if(id == ""){
            alert("아이디를 입력하세요");
            $("#user_id").focus();
@@ -35,7 +34,7 @@ $(document).ready(function(){
            $("#agree").focus();
            return false;        
         }
-        $("#regform").submit();
+        $("#insertForm").submit();
     });
 });    
 </script>
@@ -69,18 +68,18 @@ $(document).ready(function(){
             <div id="blog-post" class="col-md-12">
                 <div id="comment-form">
                 <h4 class="text-uppercase">글 작성하기</h4>
-               <form id="insertForm" class="insertForm" name="insertForm">
+               <form id="insertForm" method="POST" class="insertForm" name="insertForm" action="/orderInsertServlet">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="name">제목<span class="required text-primary">*</span></label>
-                        <input id="orderTitle" type="text" class="form-control">
+                        <input id="orderTitle" type="text" class="form-control" name="orderTitle">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="name">사진<span class="required text-primary">*</span></label>
-                        <input id="img" type="file" class="form-control">
+                        <input id="img" type="file" class="form-control" >
                       </div>
                     </div>
                   </div>
@@ -88,7 +87,7 @@ $(document).ready(function(){
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="name">포인트<span class="required text-primary">*</span></label>
-                        <input id="orderPoint" type="text" class="form-control">
+                        <input id="orderPoint" type="text" class="form-control" name="orderPoint">
                       </div>
                     </div>
                     <div class="col-sm-6">
