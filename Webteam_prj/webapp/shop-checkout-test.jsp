@@ -354,6 +354,25 @@
               </table>
               </div>	
              </div>  
+            
+            <div class="content">
+                <div class="panel-heading">
+                  <h3 class="text-uppercase">내역조회</h3>
+                </div>
+                <div class="panel-body">
+                  <form role="search">
+                    <div class="input-group">
+                      <input type="text" placeholder=" 예) 7일이내면 '7'입력" class=""><span class="input-group-btn">
+                        <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button></span>
+                    </div>
+                  </form>
+               
+                </div>
+               <div>
+               <br>
+               </div>
+             
+            </div>
               
                 <div class="content">
                   <div class="table-responsive">
