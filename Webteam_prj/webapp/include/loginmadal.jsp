@@ -8,44 +8,36 @@
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id"
      content="467969851194-d927d4s9ugp8jeu4tdng7a3ioftknufu.apps.googleusercontent.com">
-     
-       <script>
-      //google callback. This function will redirect to our login servlet
-      function onSignIn(googleUser) {
-         var profile = googleUser.getBasicProfile();
-         console.log('ID: ' + profile.getId());
-         console.log('Name: ' + profile.getName());
-         console.log('Image URL: ' + profile.getImageUrl());
-         console.log('Email: ' + profile.getEmail());
-         console.log('id_token: ' + googleUser.getAuthResponse().id_token);
-         $("#Gid").val(profile.getId());
-         $("#Gname").val(profile.getName());
-         $("#ImageURL").val(profile.getImageUrl());
-        $("#Email").val(profile.getEmail());
-         $("#id_token").val(googleUser.getAuthResponse().id_token);
-         //do not post all above info to the server because that is not secure.
-         //just send the id_token
+       <script src="https://apis.google.com/js/api.js"></script>    
+    <script type="text/javascript">
+        function onSignIn(googleUser) {
+            console.log( "signedin");
+            // Useful data for your client-side scripts:
+        };
 
-        var redirectUrl = '/LoginLogoutServlet';
+        gapi.load('auth2', function() {
+            gapi.auth2.init({
+                client_id: "467969851194-d927d4s9ugp8jeu4tdng7a3ioftknufu.apps.googleusercontent.com",
+                scope: "profile email" // this isn't required
+            }).then(function(auth2) {
+                console.log( "signed in: " + auth2.isSignedIn.get() );  
+                auth2.isSignedIn.listen(onSignIn);
+                var button = document.querySelector('#signInButton');
+                button.addEventListener('click', function() {
+                  auth2.signIn();
+                  console.log(auth2.currentUser.get().getBasicProfile());
+                  console.log(auth2.currentUser.get().getBasicProfile().getId());
+                  console.log(auth2.currentUser.get().getBasicProfile().getName());
+                  console.log(auth2.currentUser.get().getBasicProfile().getGivenName());
+                  console.log(auth2.currentUser.get().getBasicProfile().getFamilyName());
+                  console.log(auth2.currentUser.get().getBasicProfile().getImageUrl());
+                  console.log(auth2.currentUser.get().getBasicProfile().getEmail());
+                  
+                });
+            });
+        });
+    </script>
 
-         //using jquery to post data dynamically
-var form = $('<form action="' + redirectUrl + '" method="post">' +
-                          '<input type="text" name="id_token" value="' +
-                           googleUser.getAuthResponse().id_token + '" />' +
-                           '<input type="text" name="Gid" value="' +
-                           profile.getId() + '" />' +
-                           '<input type="text" name="Gname" value="' +
-                           profile.getName()+ '" />' +
-                           '<input type="text" name="ImageURL" value="' +
-                           profile.getImageUrl() + '" />' +
-                           '<input type="text" name="Email" value="' +
-                           profile.getEmail()+ '" />' + 
-                                                                '</form>'); 
-          $('body').append(form);
-         form.submit();
-      }
-
-   </script>
   <!-- Login Modal-->
       <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true" class="modal fade">
         <div role="document" class="modal-dialog">
@@ -55,7 +47,7 @@ var form = $('<form action="' + redirectUrl + '" method="post">' +
               <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">X</span></button>
             </div>
             <div class="modal-body">
-              <form action="customer-orders.html" method="get">
+              <form action="googleasd.jsp">
               <input type="hidden" name="Gname" id="Gname">
                <input type="hidden" name="ImageURL" id="ImageURL">
                 <input type="hidden" name="Gid" id="Gid">
@@ -68,9 +60,10 @@ var form = $('<form action="' + redirectUrl + '" method="post">' +
                   <input id="password_modal" type="password" placeholder="password" class="form-control">
                 </div>
                 <p class="text-center">
-                  <button class="btn btn-template-outlined"><i class="fa fa-sign-in"></i> Log in</button>
-                  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                 
+                  <button  class="btn btn-template-outlined"><i class="fa fa-sign-in"></i> Log in</button>
+              <!-- <div class="g-signin2" data-onsuccess="onSignIn"><a href="#" onclick="googleasd.jsp">Sign out</a></div> -->
+                 <!-- <button  class="g-signin2" onclick="location.href='/googleasd.jsp'"></button>  -->
+                 <div class="g-signin2" id="signInButton"></div>
                 </p>
               </form>
               <p class="text-center text-muted">Not registered yet?</p>
