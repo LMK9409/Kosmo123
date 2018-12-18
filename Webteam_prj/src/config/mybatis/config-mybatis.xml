@@ -12,7 +12,7 @@
 		<typeAlias alias="PointVO" type="com.jang.point.PointVO"  />
 	</typeAliases>
 	
-
+ 
 	
 	<environments default="development">
 		<environment id="development">
