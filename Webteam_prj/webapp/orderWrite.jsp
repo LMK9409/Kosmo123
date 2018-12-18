@@ -5,35 +5,31 @@
 <html>
   <head>
   <%@ include file="/include/header.jsp" %>
-  <script src="/modules/jquery.min.js"></script>
+
 <script>
 $(document).ready(function(){
+	console.log("asd");
 	//jQuery 지원 : 첨부파일 미리보기 ---------------------
 	
 	$("#regBtn").click(function(){
-        var id = $("#user_id").val();
-        var pw = $("#user_pw").val();
-        var pw2 =  $("#user_pw2").val();
-        if(id == ""){
-           alert("아이디를 입력하세요");
-           $("#user_id").focus();
+        var title = $("#orderTitle").val();
+        var point = $("#orderPoint").val();
+        var context = $("#orderText").val();
+        if(title == ""){
+           alert("제목을 입력하세요");
+           $("#orderTitle").focus();
            return false;
         }
-        if(pw == ""){
-           alert("비밀번호를 입력해주세요.");
-           $("#user_pw").focus();
+        if(point == ""){
+           alert("포인트를 입력해주세요.");
+           $("#orderPoint").focus();
            return false;
         }
-        if(pw != pw2){
-           alert("비밀번호가 다릅니다.");
-           $("#user_pw").focus();
+        if(context == ""){
+           alert("내용을 입력해주세요");
+           $("#orderText").focus();
            return false;
         } 
-        if(agree != 'y'){
-           alert("약관 동의를 해주세요");
-           $("#agree").focus();
-           return false;        
-        }
         $("#insertForm").submit();
     });
 });    
@@ -68,7 +64,7 @@ $(document).ready(function(){
             <div id="blog-post" class="col-md-12">
                 <div id="comment-form">
                 <h4 class="text-uppercase">글 작성하기</h4>
-               <form id="insertForm" method="POST" class="insertForm" name="insertForm" action="/orderInsertServlet">
+               <form method="POST" action="/orderInsertServlet" id="insertForm"class="insertForm" name="insertForm" >
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
@@ -126,7 +122,7 @@ $(document).ready(function(){
                     
                   <div class="row">
                     <div class="col-sm-12 text-right">
-                      <button class="btn btn-template-outlined"><i class="fa fa-comment-o"></i>작성확인</button>
+                      <button class="btn btn-template-outlined" name="regBtn"><i class="fa fa-comment-o"></i>작성확인</button>
                     </div>
                   </div>
                   </form>
@@ -199,5 +195,4 @@ $(document).ready(function(){
 
   </script>
   </body>
->>>>>>> branch 'master' of https://github.com/LMK9409/Kosmo123
 </html>

@@ -75,5 +75,11 @@
        (test_seq.nextval,#{oTitle},sysdate,#{oText},#{oPoint},1,#{oAddress},#{oLat},#{oLng},'OM')
     </insert>
     
+     <update id="orderUpdate" parameterType="com.jang.order.orderVO">
+         update order_board
+         set o_title=#{oTitle}, o_point=#{oPoint}, o_address=#{oAddress}, o_lat=#{oLat}, o_lng=#{oLng},o_text=#{oText}
+         where o_seq=#{oSeq}
+    </update>
+    
    
 </mapper>   

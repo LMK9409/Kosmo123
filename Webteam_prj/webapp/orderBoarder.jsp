@@ -371,7 +371,7 @@
                        
                       </ul>
                          <style id="orderBtn" >.btn {float: right;}</style>
-                    <button type="button" id="orderBtn" onclick="location.href='orderWrite.jsp' "class="btn btn-lg btn-primary" >의뢰하기</button>
+                    <button type="button" id="orderBtn" onclick="location.href='orderWrite.jsp'"class="btn btn-lg btn-primary" >의뢰하기</button>
                          
                     </nav>
                				 
