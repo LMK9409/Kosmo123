@@ -79,7 +79,7 @@
     <select id="orderOne" parameterType="Integer" resultMap="orderMap">
       select *
       from order_board o,member m
-      where m.m_seq=o.m_seq and o.o_seq=${value}
+      where m.m_seq=o.m_seq and o.o_seq=${value} 
     </select>
     
     <insert id="orderInsert" parameterType="orderMap">
