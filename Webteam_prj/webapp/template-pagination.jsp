@@ -166,7 +166,7 @@
 </form>
                     <ul class="pager list-unstyled d-flex align-items-center justify-content-between mb-0">
                       <li class="previous"><a href="#" class="btn btn-template-outlined">← Older</a></li>
-                      <li class="next"><a href="#" class="btn btn-template-outlined">Newer →</a></li>
+                     <li class="next"><a href="#" class="btn btn-template-outlined">Newer →</a></li>
                     </ul>
                   </div>
                 </div>

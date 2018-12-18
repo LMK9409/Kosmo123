@@ -114,7 +114,7 @@
                     <button type="button" id="sun" class="btn btn-lg btn-primary" >글쓰기</button><br><br>
                     
 	<!-- <input type="button" value="일반검색버튼" onClick="httpAjax()"> -->
-</form>
+</form> 
 					
                      </div>
           </div>

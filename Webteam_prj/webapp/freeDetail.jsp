@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%@ include file="/include/header.jsp" %>
+    <%@ include file="/include/header.jsp" %> 
    </head>
   <body>
     <div id="all">
