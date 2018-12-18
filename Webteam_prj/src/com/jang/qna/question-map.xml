@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  
+<mapper namespace="userNameSpace">
+<mapper namespace="com.biz.mapper">
+ -->
+<mapper namespace="QuestionNameSpace">
+
+	<resultMap id="question_select_1nn" type="com.jang.order.QuestionVO" 
+		extends="answerMap">
+			<collection property="answerlist" resultMap="answerMap"/>
+			<collection property="codelist" resultMap="code_listMap"/>
+			<collection property="memberlist" resultMap="memberMap"/>
+	</resultMap>
+
+   <resultMap id="questionMap" type="com.jang.order.QuestionVO">
+      <id property="qSeq" column="q_seq" />
+      <result property="mSeq" column="m_seq" />
+      <result property="qtext" column="q_text" />
+      <result property="qRegdate" column="q_regdate" />
+      <result property="qGubun" column="q_gubun" />
+   </resultMap>
+   
+   <resultMap id="answerMap" type="com.jang.order.AnswerVO">
+      <id property="aSeq" column="a_seq" />
+      <result property="qSeq" column="q_seq" />
+      <result property="atext" column="a_text" />
+      <result property="aRegdate" column="a_regdate" />
+   </resultMap>
+  
+   <resultMap id="memberMap" type="com.jang.order.MemberVO">
+      <id property="mSeq" column="m_seq" />
+      <result property="mNickname" column="m_nickname" />
+      <result property="mFrom" column="m_from" />
+      <result property="mEmail" column="m_email" />
+      <result property="qGubun" column="m_account_number" />
+      <result property="qGubun" column="m_bank" />
+      <result property="qGubun" column="m_phone" />
+      <result property="qGubun" column="m_regdate" />
+      <result property="qGubun" column="m_address" />
+      <result property="qGubun" column="m_lat" />
+      <result property="qGubun" column="m_lng" />
+      <result property="qGubun" column="m_delete_yn" />
+      <result property="qGubun" column="m_gubun" />
+      <result property="qGubun" column="m_push" />
+      <result property="qGubun" column="m_sipcode" />
+      <result property="qGubun" column="m_address_detail" />
+      <result property="qGubun" column="m_account_holder" />
+      <result property="qGubun" column="grade_gubun" />
+   </resultMap>
+   
+   <resultMap id="code_listMap" type="com.jang.order.Code_listVO">
+      <id property="codeListSeq" column="code_list_seq" />
+      <result property="codeListGubun" column="code_list_seq" />
+      <result property="codeListGubunDetail" column="code_list_gubun_detail" />
+      <result property="codeListEtc" column="code_list_etc" />
+   </resultMap>
+    
+    <!-- /* 답글이없는 문의 리스트 조회 조회할때는 구분이 seq가 아니라 detail한 구분으로 나오도록(조인)*/ -->
+    <select id="questionSelect" resultMap="questionMap">
+      select m.mNickname, q.qText, cl.code_list_gubun_detail from question q, member m, code_list cl
+	where q.mSeq = m.mSeq and q.qGubun = cl.codeListGubun; 
+    </select>
+    
+     <!-- /*특정 회원의 문의내역 조회*/ -->
+    <select id="memberquestionSelect" resultMap="question_select_1nn">
+     select qSeq, qText, qRegdate, m.mNickname from question q, member m
+	where q.mSeq = m.mSeq and m.mNickname=#{mNickname};
+    </select>
+    
+     <!-- /*문의_seq에대한 답변 조회*/ -->
+    <select id="replyquestionSelect" resultMap="question_select_1nn">
+      select distinct a.aText, a.aRegdate from answer a, question q
+	where a.mSeq = q.mSeq;
+    </select>
+    
+    <!-- /*문의 insert*/ -->
+	<insert id="insertquestion" parameterType="com.jang.order.QuestionVO">
+	insert into question(qSeq, mSeq, qText, qRegdate, qGubun)
+			values(#{qSeq}, #{mSeq}, #{qText}, sysdate, #{qGubun});
+	</insert>
+    
+    <!-- /*문의에 대한 답변 insert */ -->
+    <insert id="replyinsertquestion" parameterType="com.jang.order.AnswerVO">
+	insert into answer(aSeq, qSeq, aText, aRegdate)
+			values(#{aSeq}, #{qSeq}, #{aText}, sysdate);
+	</insert>
+	
+	<!-- /*문의 수정*/ -->
+	<update id="updatequestion" parameterType="com.jang.order.QuestionVO">
+	update question set qText=#{qText}, qRegdate=sysdate, qGubun=#{qGubun}
+		  where qSeq=#{qSeq};
+	</update>
+   
+</mapper>   
