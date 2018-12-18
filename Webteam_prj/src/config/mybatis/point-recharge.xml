@@ -13,29 +13,25 @@
       <result property="ioRegdate" column="io_regdate" />
       <result property="mSeq" column="m_seq" />
       <result property="ioGubun" column="io_gubun" />
-      </resultMap> 
-   
-<!--    <resultMap id="shopPicMap" type="com.biz.shop.ShopPicVO">
-      <id property="pseq" column="pseq" />
-      <result property="ppath" column="ppath" />
-      <result property="pname" column="pname" />
-      <result property="sysname" column="syspname" />
-      <result property="sseq" column="sseq" />
-      <result property="pchk_yn" column="pchk_yn" /> 
-   </resultMap>
-
-   <resultMap id="shopReplyMap" type="com.biz.shop.ReplyVO">
-      <id property="rseq" column="rseq" />
-      <result property="reply" column="reply" />
-      <result property="regid" column="regid" />
-      <result property="regdate" column="regdate" />
-      <result property="sseq" column="sseq" />
-   </resultMap>
- -->
+      <result property="codeListGubunDetail" column="code_list_gubun_detail" />
+    </resultMap>
 
     <insert id="pointRecharge" parameterType="com.jang.point.PointVO">
-    insert into point_log values(11, #{ioPoint}, sysdate, #{mSeq},(select code_list_seq from code_list 
-	where code_list_gubun_detail='충전'))
+    insert into point_log values(11, #{ioPoint}, sysdate, #{mSeq},'IO_C')
     </insert>
-
+    
+	<select id="pointListDetail" parameterType="int" resultMap="pointMap">
+		select p.m_seq, p.io_regdate, c.code_list_gubun_detail, p.io_point from point_log p, code_list c 
+		where p.io_gubun = c.code_list_gubun AND m_seq = #{mSeq}
+	</select>
+	
+	<select id="nowpoint" parameterType="int" resultType="int">
+		select sum(io_point) as io_point from point_log 
+		where m_seq = #{value}
+	</select>
+	
+    <select id = "waitpoint" parameterType="int" resultType="int">
+	select nvl(sum(p_point),0) as p_point from payment_apply 
+	where m_seq = #{value} AND payment_gubun = 'PW'
+	</select>
 </mapper>   

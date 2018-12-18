@@ -5,9 +5,16 @@ public class PointVO {
 	private int ioPoint;
 	private String ioRegdate;
 	private int mSeq;
-	private String ioGubun; 
+	private String ioGubun;
+	private String codeListGubunDetail;
 	public int getIoSeq() {
 		return ioSeq;
+	}
+	public String getCodeListGubunDetail() {
+		return codeListGubunDetail;
+	}
+	public void setCodeListGubunDetail(String codeListGubunDetail) {
+		this.codeListGubunDetail = codeListGubunDetail;
 	}
 	public void setIoSeq(int ioSeq) {
 		this.ioSeq = ioSeq;

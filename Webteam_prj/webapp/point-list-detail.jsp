@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+
 <!DOCTYPE html>
 <html>
-  <head>
+<head>	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Universal - All In 1 Template</title>
@@ -35,42 +36,48 @@
     <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-        <script>
-        $(document).ready(function(){
-				
-	    	$.ajax({                         //의뢰 리스트 ajax로 불러오는부분
-  				url:"/OrderList",
-  				type:"post",
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.ajax({
+			url:"/point",
+			type:"POST",
+			success:function(res){
+				alert("asdf");
+				console.log(res);
+				var html = "";
+			    $.each(res, function(index, vv){
+			    	  html += "<tr><td>"+(index+1)+"</td>";
+			    	  html += "<td>"+vv.ioRegdate+"</td>";
+			    	  html += "<td>"+vv.ioPoint+"</td>";
+			    	  html += "<td colspan=\"3\">"+vv.codeListGubunDetail+"</td></tr>";
+			    })
+			 $("#point_list").html(html);
+		}
+	}) 
+	
+	$.ajax({ //현재 포인트
+  				url:"/pointOneServlet",
+  				type:"POST",
   				success:function(res){
-  					
   					console.log(res);
-  					var reshtml ="<table class='table table-hover'>";
-  					reshtml+="<thead>";
-  					reshtml+="<tr><th>닉네임</th><th>날짜</th><th>제목</th><th>포인트</th><th>상세보기</th></tr>";
-  					reshtml+="</thead>";
-  					reshtml+="<tbody>";
-  					 $.each(res, function(index, vv){
-     						reshtml+="<tr>";
-     						reshtml+="<th>"+vv.mNickName+"</th>";
-     						reshtml+="<td>"+vv.oRegdate+"</td>";
-     						reshtml+="<td>"+vv.oTitle+"</td>";
-     					    reshtml +="<td><span class='badge badge-info'>"+vv.oPoint+"</span></td>";
-     						reshtml+="<td><a href='/orderDetail?seq="+vv.oSeq+"' class='btn btn-template-outlined btn-sm'>수주하기</a></td>";
-     						reshtml+="</tr>";
-  				  });
-  					reshtml+="</tbody>"; 
-  					reshtml+="</table>";
-  				 	$(".table-responsive").html(reshtml); 
+  				 	$("#now_point").html(res);
+  				}
+  			})
+  			
+  	$.ajax({  //의뢰 대기중 포인트
+  				url:"/pointWaitServlet",
+  				type:"POST",
+  				success:function(res){
+  					console.log(res);
+  					$("#wait_point").html(res);
   				}
   			})
 
-      })
-      </script>
-  </head>
+});
+</script>
+</head>
   <body>
     <div id="all">
       <!-- Top bar-->
@@ -105,7 +112,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 id="login-modalLabel" class="modal-title">Customer Login</h4>
-              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">Ã</span></button>
             </div>
             <div class="modal-body">
               <form action="customer-orders.html" method="get">
@@ -120,7 +127,7 @@
                 </p>
               </form>
               <p class="text-center text-muted">Not registered yet?</p>
-              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
+              <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1Â minute and gives you access to special discounts and much more!</p>
             </div>
           </div>
         </div>
@@ -327,62 +334,100 @@
         <div class="container">
           <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-              <h1 class="h2">Tabs</h1>
+              <h1 class="h2">포인트 조회</h1>
             </div>
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">Pagination</li>
+                <li class="breadcrumb-item active">My Account</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <section class="bar">
+      <div id="content">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <!-- MENUS AND WIDGETS -->
-           
-            </div>
-            <div class="col-lg-12">
-              <div id="pagination" class="wp-example">
-                <h3 class="section-title">의뢰게시판</h3>
-                <div class="row">
-                  <div class="col-md-12">
-              <div class="box mt-0 mb-lg-0">
+          <div class="row bar">
+            <div id="customer-account" class="col-lg-9 clearfix">
               
-                <div class="table-responsive">
-                  
+              <p class="lead">잔여 포인트와 의뢰대기 포인트를 확인할 수 있습니다.</p>
+                <div class="box mt-5">
+              	
+                <div class="heading">
+                  <h3 class="text-uppercase">잔여 포인트</h3><br>
+                  <span id = "now_point" class="h3 counter"></span>
                 </div>
                 
+				<div class="heading">
+				<h3 class="text-uppercase">의뢰 대기 포인트</h3><br>
+				<span id = "wait_point" class="h3 counter"></span>
+				</div>
+				
+				
+				<div class="heading">
+				<h3 class="text-uppercase">포인트 내역</h3><br>
+				</div>
+                <table class="table">
+                      <thead>
+                        <tr>
+                          <th>번호</th>
+                          <th>날짜</th>
+                          <th>포인트</th>
+                          <th>상세내역</th>
+                        </tr>
+                      </thead>
+                      <tbody id = "point_list" name = "point_list">
+                      <!-- 포인트 내역 forEach문으로 돌릴부분 -->
+                      </tbody>
+                    </table>
+           
               </div>
-                   
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination pagination-sm">
-                        <li class="page-item"><a href="#" class="page-link">«</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">»</a></li>
-                       
-                       
-                      </ul>
-                         <style id="orderBtn" >.btn {float: right;}</style>
-                    <button type="button" id="orderBtn" class="btn btn-lg btn-primary" >의뢰하기</button>
-                         
-                    </nav>
-               				 
-                     	   
-                  </div>
+            </div>
+            <div class="col-lg-3 mt-4 mt-lg-0">
+              <!-- CUSTOMER MENU -->
+              <div class="panel panel-default sidebar-menu">
+                <div class="panel-heading">
+                  <h3 class="h4 panel-title">마이페이지</h3>
+                </div>
+                <div class="panel-body">
+                  <ul class="nav nav-pills flex-column text-sm">
+                    <li class="nav-item"><a href="customer-orders.html" class="nav-link"><i class="fa fa-list"></i>의뢰신청 / 수주</a></li>
+                    <li class="nav-item"><a href="customer-wishlist.html" class="nav-link"><i class="fa fa-heart"></i>포인트 조회</a></li>
+                    <li class="nav-item"><a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i>포인트 환급</a></li>
+                    <li class="nav-item"><a href="recharge.jsp" class="nav-link"><i class="fa fa-user"></i>충전</a></li>
+                    
+    <!------------  <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></li>---------------------로그아웃 -->  
+                    
+                  </ul>
+                </div>
+                 <div class="panel-heading">
+                  <h3 class="h4 panel-title">고객센터</h3>
+                </div>
+                <div class="panel-body">
+                  <ul class="nav nav-pills flex-column text-sm">
+                    <li class="nav-item"><a href="customer-orders.html" class="nav-link"><i class="fa fa-list"></i>FAQ</a></li>
+                 
+    <!------------  <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></li>---------------------로그아웃 -->  
+                    
+                  </ul>
+                </div>
+                 <div class="panel-heading">
+                  <h3 class="h4 panel-title">회원정보</h3>
+                </div>
+                <div class="panel-body">
+                  <ul class="nav nav-pills flex-column text-sm">
+                    <li class="nav-item"><a href="customer-account.jsp" class="nav-link active"><i class="fa fa-list"></i>기본정보 변경</a></li>
+                    <li class="nav-item"><a href="customer-account.jsp" class="nav-link"><i class="fa fa-list"></i>회원탈퇴</a></li>
+                    
+    <!------------  <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></li>---------------------로그아웃 -->  
+                    
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <!-- GET IT-->
       <div class="get-it">
         <div class="container">
@@ -394,93 +439,10 @@
           </div>
         </div>
       </div>
-      <!-- FOOTER -->
-      <footer class="main-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <h4 class="h6">About Us</h4>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-              <hr>
-              <h4 class="h6">Join Our Monthly Newsletter</h4>
-              <form>
-                <div class="input-group">
-                  <input type="text" class="form-control">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-secondary"><i class="fa fa-send"></i></button>
-                  </div>
-                </div>
-              </form>
-              <hr class="d-block d-lg-none">
-            </div>
-            <div class="col-lg-3">
-              <h4 class="h6">Blog</h4>
-              <ul class="list-unstyled footer-blog-list">
-                <li class="d-flex align-items-center">
-                  <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div>
-                  <div class="text">
-                    <h5 class="mb-0"> <a href="post.html">Blog post name</a></h5>
-                  </div>
-                </li>
-                <li class="d-flex align-items-center">
-                  <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div>
-                  <div class="text">
-                    <h5 class="mb-0"> <a href="post.html">Blog post name</a></h5>
-                  </div>
-                </li>
-                <li class="d-flex align-items-center">
-                  <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div>
-                  <div class="text">
-                    <h5 class="mb-0"> <a href="post.html">Very very long blog post name</a></h5>
-                  </div>
-                </li>
-              </ul>
-              <hr class="d-block d-lg-none">
-            </div>
-            <div class="col-lg-3">
-              <h4 class="h6">Contact</h4>
-              <p class="text-uppercase"><strong>Universal Ltd.</strong><br>13/25 New Avenue <br>Newtown upon River <br>45Y 73J <br>England <br><strong>Great Britain</strong></p><a href="contact.html" class="btn btn-template-main">Go to contact page</a>
-              <hr class="d-block d-lg-none">
-            </div>
-            <div class="col-lg-3">
-              <ul class="list-inline photo-stream">
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare2.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare3.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare3.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare2.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="copyrights">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-4 text-center-md">
-                <p>&copy; 2018. Your company / name goes here</p>
-              </div>
-              <div class="col-lg-8 text-right text-center-md">
-                <p>Template design by <a href="https://bootstrapious.com/free-templates">Bootstrapious Templates </a></p>
-                <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <!-- 풋터 영역 --> 
+      <%@ include file="/include/footer.jsp" %>
     </div>
-    <!-- Javascript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/waypoints/lib/jquery.waypoints.min.js"> </script>
-    <script src="vendor/jquery.counterup/jquery.counterup.min.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
-    <script src="js/front.js"></script>
+    <!-- 스크립트 영역  -->
+      <%@ include file="/include/script.jsp" %>
   </body>
 </html>
