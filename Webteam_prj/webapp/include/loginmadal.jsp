@@ -5,9 +5,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id"
-     content="467969851194-d927d4s9ugp8jeu4tdng7a3ioftknufu.apps.googleusercontent.com">
        <script src="https://apis.google.com/js/api.js"></script>    
     <script type="text/javascript">
         function onSignIn(googleUser) {
@@ -32,7 +29,7 @@
                   console.log(auth2.currentUser.get().getBasicProfile().getFamilyName());
                   console.log(auth2.currentUser.get().getBasicProfile().getImageUrl());
                   console.log(auth2.currentUser.get().getBasicProfile().getEmail());
-                  
+                  console.log(gapi.auth2.AuthResponse);
                 });
             });
         });
