@@ -24,7 +24,7 @@ public class FreeListServlet extends HttpServlet {
 		FreeDAO fDAO= new FreeDAO();
 		ArrayList<FreeVO> list = new ArrayList<FreeVO>();
 		list=fDAO.selectAll();
-		 
+		  
 		Gson gson= new Gson();
 		response.setContentType("application/json; encoding=UTF-8");
 		response.setCharacterEncoding("UTF-8");

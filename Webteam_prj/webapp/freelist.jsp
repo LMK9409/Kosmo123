@@ -27,7 +27,7 @@
      						reshtml+="<td>"+vv.fTitle+"</td>";
      						reshtml+="<td><a href='/freeDetail?seq="+vv.fSeq+"' class='btn btn-template-outlined btn-sm'>상세보기</a></td>";
      						reshtml+="</tr>";
-  				  });
+  				  }); 
   					reshtml+="</tbody>"; 
   					reshtml+="</table>";
   				 	$(".table-responsive").html(reshtml); 

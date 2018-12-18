@@ -9,7 +9,7 @@
       <result property="fRegdate" column="f_regdate" />
       <result property="mNickName" column="m_nickname" />
       <result property="fYn" column="f_yn" />
-    </resultMap>
+    </resultMap> 
      
     <select id="freeAll" resultMap="freeMap">
       select *
