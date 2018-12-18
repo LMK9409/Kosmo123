@@ -6,7 +6,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 id="login-modalLabel" class="modal-title">Customer Login</h4>
-              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">Ã</span></button>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">X</span></button>
             </div>
             <div class="modal-body">
               <form action="customer-orders.html" method="get">
