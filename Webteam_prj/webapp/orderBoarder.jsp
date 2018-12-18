@@ -59,7 +59,7 @@
      						reshtml+="<td>"+vv.oRegdate+"</td>";
      						reshtml+="<td>"+vv.oTitle+"</td>";
      					    reshtml +="<td><span class='badge badge-info'>"+vv.oPoint+"</span></td>";
-     						reshtml+="<td><a href='/orderDetail?seq="+vv.oSeq+"' class='btn btn-template-outlined btn-sm'>수주하기</a></td>";
+     						reshtml+="<td><a href='/orderDetail?seq="+vv.oSeq+"' class='btn btn-template-outlined btn-sm'>상세보기</a></td>";
      						reshtml+="</tr>";
   				  });
   					reshtml+="</tbody>"; 
@@ -371,7 +371,7 @@
                        
                       </ul>
                          <style id="orderBtn" >.btn {float: right;}</style>
-                    <button type="button" id="orderBtn" class="btn btn-lg btn-primary" >의뢰하기</button>
+                    <button type="button" id="orderBtn" onclick="location.href='orderWrite.jsp' "class="btn btn-lg btn-primary" >의뢰하기</button>
                          
                     </nav>
                				 

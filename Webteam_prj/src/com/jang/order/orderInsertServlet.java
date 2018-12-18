@@ -35,6 +35,8 @@ public class orderInsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String orderTitle = request.getParameter("orderTitle");
 		String orderPoint = request.getParameter("orderPoint");
 		String placename = request.getParameter("placename");
