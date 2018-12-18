@@ -11,15 +11,13 @@
       <result property="fYn" column="f_yn" />
     </resultMap>
      
-<sql id="commonSelect">user_name, user_gubun</sql>
-    
     <select id="freeAll" resultMap="freeMap">
       select *
       from free_board f,member m
       where m.m_seq=f.m_seq
     </select>
     
-<select id="FreeOne" parameterType="Integer" resultMap="freeMap">
+<select id="freeOne" parameterType="Integer" resultMap="freeMap">
       select *
       from free_board f,member m
       where m.m_seq=f.m_seq and f.f_seq=${value}
