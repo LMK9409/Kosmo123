@@ -42,53 +42,7 @@
 <script>
 $(document).ready(function(){
 	//jQuery 지원 : 첨부파일 미리보기 ---------------------
-	$("#pname").on("change", handleImgFileSelect);
 	
-	function handleImgFileSelect(e) {
-			$("#prev-img-div").empty();
-			var files = e.target.files;  			//[object FileList]
-			//FileList into an array 
-			//var fileArr = Array.prototype.slice.call(files);			
-			var fileArr = Array.from(files); //[object File],[object File],[object File]
-				
-			if(fileArr.length > 3) {  //files.length
-					alert("이미지 첨부는 최대 3개만 가능합니다.");
-					$("#pname").val("");
-					return false;
-			}
-			
-			var fileSize = 0;
-			fileArr.forEach(function(f) {
-					fileSize += f.size;
-			});
-			if(fileSize > 10*1024*1024) {
-					alert("이미지 첨부는 최대 10MB만 가능합니다.");
-					$("#pname").val("");
-					return false;
-			}
-			
-			fileArr.forEach(function(f) {
-					if(!f.type.match("image.*")) {
-							alert("이미지 첨부만 가능합니다.");
-							$("#pname").val("");
-							return false;
-					} 
-					
-					var reader = new FileReader();
-					var htmlStr = "";
-					reader.onload = function(e) {
-							htmlStr += "<img src='"+e.target.result+"' style='height:80px;width:80px;'> ";
-							$("#prev-img-div").append(htmlStr);
-							//alert(htmlStr)
-					}
-					//reader.onload = function(e) { 
-					//	$("#prev-img").attr("src", e.target.result); 
-					//} 
-					reader.readAsDataURL(f); 
-			});
-			
-			
-	}
 	$("#regBtn").click(function(){
         var id = $("#user_id").val();
         var pw = $("#user_pw").val();
@@ -118,7 +72,7 @@ $(document).ready(function(){
     });
 });    
 </script>
-  </head>
+  </head> 
   <body>
     <div id="all">
       <!-- Top bar-->
