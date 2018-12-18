@@ -353,7 +353,7 @@ $(document).ready(function(){
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="name">제목<span class="required text-primary">*</span></label>
-                        <input id="name" type="text" class="form-control">
+                        <input id="orderTitle" type="text" class="form-control">
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -367,7 +367,7 @@ $(document).ready(function(){
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="name">포인트<span class="required text-primary">*</span></label>
-                        <input id="name" type="text" class="form-control">
+                        <input id="orderPoint" type="text" class="form-control">
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -393,7 +393,7 @@ $(document).ready(function(){
                     <div class="col-sm-12">
                       <div class="form-group">
                         <label for="comment">글내용<span class="required text-primary">*</span></label>
-                        <textarea id="comment" rows="16" class="form-control"></textarea>
+                        <textarea name="orderText" id="comment" rows="16" class="form-control"></textarea>
                       </div>
                     </div>
                     </div>
