@@ -13,7 +13,7 @@ public class orderVO {
 	private Double oLng;
 	private int kSeq;
 	private String orderGubun;
-	private String orderYn;
+	private String orderYn; 
 	
 	
 	public String getOrderYn() {

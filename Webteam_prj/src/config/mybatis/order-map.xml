@@ -22,7 +22,7 @@
       <result property="orderYn" column="ORDER_YN" />
    </resultMap>
    
-    <select id="orderAll" resultMap="orderMap">
+    <select id="orderAll" resultMap="orderMap"> 
       select o.o_seq,o.o_title,o.o_point,to_char(o.o_regdate, 'mm/dd HH24:MI') as o_regdate,m.m_nickname
       from order_board o,member m
       where m.m_seq=o.m_seq and o.order_gubun='OM' and o.order_yn='N'
