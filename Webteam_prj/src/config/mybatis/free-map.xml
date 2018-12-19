@@ -41,6 +41,11 @@
       from free_board_comment c,free_board f,member m
       where c.f_seq= f.f_seq and m.m_seq = c.m_seq and c.f_seq=${value}
     </select>
-    
+   <!--  <insert id="freeInsert" parameterType="com.jang.free.FreeVO">
+       insert into free_board
+       (f_seq,f_title,f_regdate,f_text,m_seq,f_yn) 
+       values
+       (test_seq.nextval,#{fTitle},sysdate,#{fText},1,'N')
+    </insert> -->
     
 </mapper>

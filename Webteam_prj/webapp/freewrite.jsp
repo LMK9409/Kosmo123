@@ -5,6 +5,28 @@
 <html> 
   <head>
 <%@ include file="/include/header.jsp" %>
+<script>
+$(document).ready(function(){
+	console.log("Ang!");
+	//jQuery 지원 : 첨부파일 미리보기 ---------------------
+	
+	$("#regBtn").click(function(){
+        var title = $("#freeTitle").val();
+        var context = $("#freeText").val();
+        if(title == ""){
+           alert("제목을 입력하세요");
+           $("#freeTitle").focus();
+           return false;
+        }
+        if(context == ""){
+           alert("내용을 입력해주세요");
+           $("#freeText").focus();
+           return false;
+        } 
+        $("#insertForm").submit();
+    });
+});    
+</script>
 </head>
   <body>
     <div id="all">
@@ -34,12 +56,12 @@
             <div id="blog-post" class="col-md-12">
                 <div id="comment-form">
                 <h4 class="text-uppercase">글 작성하기</h4>
-                <form>
+                <form method="POST" action="/freeInsert" id="insertForm" class="insertForm" name="insertForm">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="name">제목<span class="required text-primary">*</span></label>
-                        <input id="name" type="text" class="form-control">
+                        <input id="name" type="text" class="form-control" name="freeTitle">
                       </div>
                     </div>
                   </div>
@@ -47,13 +69,13 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                         <label for="comment">글내용<span class="required text-primary">*</span></label>
-                        <textarea id="comment" rows="8" class="form-control"></textarea>
+                        <textarea name="freeText" id="comment" rows="8" class="form-control" ></textarea>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-12 text-right">
-                      <button class="btn btn-template-outlined"><i class="fa fa-comment-o"></i>작성확인</button>
+                      <button name="regBtn" class="btn btn-template-outlined"><i class="fa fa-comment-o"></i>작성확인</button>
                     </div>
                   </div>
                 </form>

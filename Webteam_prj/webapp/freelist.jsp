@@ -13,7 +13,6 @@
   				url:"/FreeList",
   				type:"post",
   				success:function(res){
-  					
   					console.log(res);
   					var reshtml ="<table class='table table-hover'>";
   					reshtml+="<thead>";
@@ -101,7 +100,7 @@
 	<!-- 버튼류 --> 
 	<button type="button" class="btn btn-sm btn-primary">검색</button>
 	<style id="sun" >.btn-lg {float: right;}</style>
- <button type="button" id="sun"  onclick="location.href='freeWrite.jsp'" class="btn btn-lg btn-primary" >글쓰기</button>
+ <button type="button" id="sun"  onclick="location.href='freewrite.jsp'" class="btn btn-lg btn-primary" >글쓰기</button>
                     
 	<!-- <input type="button" value="일반검색버튼" onClick="httpAjax()"> -->
 </form> 
