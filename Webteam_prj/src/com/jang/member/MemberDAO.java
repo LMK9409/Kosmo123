@@ -20,7 +20,7 @@ public class MemberDAO {
 
 	 public  ArrayList<orderVO> memberOrderList() {
 	      SqlSession conn =null;
-	      ArrayList<orderVO> resList =null;
+	      ArrayList<orderVO> resList =null; 
 	      try {
 	         conn = MyBatisFactory.getFactory().openSession(); 
 	         resList =(ArrayList)conn.selectList("memberNameSpace.memberOrder");   

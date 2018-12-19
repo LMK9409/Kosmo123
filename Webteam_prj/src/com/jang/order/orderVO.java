@@ -7,19 +7,31 @@ public class orderVO {
 	private String oText;
 	private int oPoint;
 	private String oPicture;
-	private String mNickName;
+	private String mNickName; 
 	private String oAddress;
 	private Double oLat;
 	private Double oLng;
 	private int kSeq;
 	private String orderGubun;
+
 	private String codeListGubunDetail;
-	
+
+	private String orderYn; 
+
 	public String getCodeListGubunDetail() {
 		return codeListGubunDetail;
 	}
 	public void setCodeListGubunDetail(String codeListGubunDetail) {
 		this.codeListGubunDetail = codeListGubunDetail;
+	}
+
+	
+	public String getOrderYn() {
+		return orderYn;
+	}
+	public void setOrderYn(String orderYn) {
+		this.orderYn = orderYn;
+
 	}
 	public int getoSeq() {
 		return oSeq;

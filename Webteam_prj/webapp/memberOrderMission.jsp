@@ -50,7 +50,7 @@
   				url:"/MemberMissionList",
   				type:"post",
   				success:function(res){
-  					
+  					 
   					var reshtml ="<table class='table'>";
   					reshtml+="<thead>";
   					reshtml+="<tr><th>날짜</th><th>상세내역</th><th>최종금액</th><th>주문상태</th><th>의뢰자</th></tr>";

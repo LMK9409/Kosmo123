@@ -56,6 +56,7 @@ public class orderInsertServlet extends HttpServlet {
 		if(odao.orderInsert(ovo)==1)
 		{
 			System.out.println("insert Done.....");
+			response.sendRedirect("orderBoarder.jsp");
 		}
 	}
 

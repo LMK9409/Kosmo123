@@ -84,7 +84,7 @@
        select o.o_regdate,o.o_text,o.o_point,c.code_list_gubun_detail, m.m_nickname
       from order_board o, member m, code_list c
       where o.k_seq=m.m_seq and o.order_gubun= c.code_list_gubun and o.k_seq = 3
-    </select>
+    </select>  
 
 
 

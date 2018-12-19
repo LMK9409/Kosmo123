@@ -60,6 +60,7 @@
                   <p class="text-center">
                         <button type="submit" class="col-lg-12 btn btn-template-outlined"><i class="fa fa-shopping-cart"></i>수주하기</button><br><br>
                         <button type="submit" onclick="location.href='/orderUpdateServlet?oSeq=${RES_VO.oSeq}'" class="col-md-12 btn btn-template-outlined"><i class="fa fa-shopping-cart"></i>수정하기</button><br><br>
+                        <button type="submit" onclick="location.href='/OrderDelete?oSeq=${RES_VO.oSeq}'" class="col-md-12 btn btn-template-outlined"><i class="fa fa-shopping-cart"></i>삭제하기</button><br><br>
                         <button type="submit" class="col-md-12 btn btn-template-outlined"><i class="fa fa-shopping-cart"></i>신고하기</button>
                       </p>
                 </div>
