@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.session.SqlSession;
 
 import com.jang.common.MyBatisFactory;
+import com.jang.order.orderVO;
 import com.jang.qna.QuestionVO;
 
 public class QuetionDAO {
@@ -34,12 +35,12 @@ public class QuetionDAO {
 	 * @return
 	 */
 	
-	public ArrayList<QuestionVO> memberquestionSelect(String mNickname) {
-		ArrayList<QuestionVO> list = new ArrayList<QuestionVO>(); 
+	public QuestionVO selectOne(int qSeq) {
+		QuestionVO list = null; 
 		SqlSession conn =null;
 		try { 
 			conn = MyBatisFactory.getFactory().openSession();
-			list = (ArrayList)conn.selectList("QuestionNameSpace.memberquestionSelect", mNickname);
+			list = (QuestionVO)conn.selectList("QuestionNameSpace.memberquestionSelect", qSeq);
 		} finally {
 			conn.close();
 		}
@@ -52,7 +53,7 @@ public class QuetionDAO {
 	 * @return
 	 */
 	
-	public ArrayList<QuestionVO> replyquestionSelect(QuestionVO qvo) {
+	public ArrayList<QuestionVO> replySelectQuestion(QuestionVO qvo) {
 		ArrayList<QuestionVO> list = new ArrayList<QuestionVO>(); 
 		SqlSession conn =null;
 		try { 
@@ -70,17 +71,18 @@ public class QuetionDAO {
 	 * @return
 	 */
 	
-	public ArrayList<QuestionVO> insertquestion(QuestionVO qvo) {
-		ArrayList<QuestionVO> list = new ArrayList<QuestionVO>(); 
-		SqlSession conn =null;
-		try { 
-			conn = MyBatisFactory.getFactory().openSession();
-			list = (ArrayList)conn.selectList("QuestionNameSpace.insertquestion", qvo);
-		} finally {
-			conn.close();
-		}
-		return list;
-	}
+	public int questionInsert(QuestionVO qvo) {
+	      SqlSession conn =null;
+	      int res = 0;
+	      try { 
+	         conn = MyBatisFactory.getFactory().openSession();
+	         res = conn.insert("QuestionNameSpace.insertquestion",qvo);
+	         conn.commit();
+	      } finally {
+	         conn.close();
+	      }
+	      return res;
+	   }
 	
 	/**
 	 * 문의에 대한 답변 insert
@@ -88,7 +90,7 @@ public class QuetionDAO {
 	 * @return
 	 */
 	
-	public int	replyinsertquestion(QuestionVO qvo, SqlSession PRMCONN) {
+	public int	replyQuestionInsert(QuestionVO qvo, SqlSession PRMCONN) {
 		return PRMCONN.insert("QuestionNameSpace.replyinsertquestion", qvo);
 	}
 	
@@ -98,8 +100,17 @@ public class QuetionDAO {
 	 * @return
 	 */
 	
-	public int	updatequestion(QuestionVO qvo, SqlSession PRMCONN) {
-		return PRMCONN.insert("QuestionNameSpace.updatequestion", qvo);
-	}
-	
+	 public int questionUpdate(QuestionVO qvo) {
+	      SqlSession conn =null;
+	      int res = 0;
+	      try { 
+
+	         conn = MyBatisFactory.getFactory().openSession();
+	         res = conn.update("QuestionNameSpace.questionUpdate", qvo);
+	         conn.commit();
+	      } finally {
+	         conn.close();
+	      }
+	      return res;
+	   }
 }

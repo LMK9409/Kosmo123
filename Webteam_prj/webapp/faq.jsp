@@ -23,7 +23,7 @@
 <link href="http://fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet"></head>
      
      <!-- TOP -->
-     <%@ include file="/include/top.jsp" %>
+     <%@ include file="/include/topbar.jsp" %>
  <body>
       
       <!-- Navbar End-->
