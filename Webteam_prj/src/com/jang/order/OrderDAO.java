@@ -68,5 +68,17 @@ public class OrderDAO {
 	      return res;
 	   }
    
+   public int orderDelete(int oseq) {
+	      SqlSession conn =null;
+	      int res = 0;
+	      try {
+	         conn = MyBatisFactory.getFactory().openSession();
+	         res = conn.delete("orderNameSpace.orderDelete",oseq);      
+	      } finally {
+	         conn.close();
+	      }
+	      return res;
+	   }
+   
    
 }

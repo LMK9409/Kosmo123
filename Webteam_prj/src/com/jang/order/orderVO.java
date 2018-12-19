@@ -13,8 +13,15 @@ public class orderVO {
 	private Double oLng;
 	private int kSeq;
 	private String orderGubun;
+	private String orderYn;
 	
 	
+	public String getOrderYn() {
+		return orderYn;
+	}
+	public void setOrderYn(String orderYn) {
+		this.orderYn = orderYn;
+	}
 	public int getoSeq() {
 		return oSeq;
 	}
