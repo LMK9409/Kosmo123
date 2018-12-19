@@ -22,11 +22,6 @@
       <collection property="rlist" resultMap="shopReplyMap"></collection>
    </resultMap> -->
 
-	<resultMap id="missionorder" type="com.jang.order.orderVO" extends="orderMap">
-			<collection property="mSeq" resultMap="memberMap"/>
-	</resultMap>
-
-
 
    <resultMap id="memberMap" type="com.jang.member.MemberVO">
       <id property="mSeq" column="m_seq" />
@@ -64,6 +59,7 @@
       <result property="oLng" column="o_lng" />
       <result property="kSeq" column="k_seq" />
       <result property="orderGubun" column="order_gubun" />
+      <result property="codeListGubunDetail" column="code_list_gubun_detail" />
    </resultMap>
    
    
@@ -84,13 +80,22 @@
       <result property="sseq" column="sseq" />
    </resultMap>
  -->
-	<select id="memberMission"   resultMap="missionorder">
-      select o.o_point, o.o_seq,o.o_title,o.o_regdate, o.o_text,o.k_seq
-      from order_board o, member m
-      where o.k_seq=m.m_seq 
-      and o.k_seq=3
+	<select id="memberMission" parameterType="int"  resultMap="orderMap">
+       select o.o_regdate,o.o_text,o.o_point,c.code_list_gubun_detail, m.m_nickname
+      from order_board o, member m, code_list c
+      where o.k_seq=m.m_seq and o.order_gubun= c.code_list_gubun and o.k_seq = 3
     </select>
 
+
+
+    <select id="memberOrder" resultMap="orderMap">
+     select o.o_point, o.o_seq,o.o_title,o.o_regdate, o.o_text,nvl(o.k_seq,null), c.code_list_gubun_detail
+      from order_board o, member m, code_list c
+      where o.k_seq=m.m_seq(+) and o.order_gubun= c.code_list_gubun
+    </select>
+    
+    
+   
 
 	<select id="memberSerachMission" resultMap="orderMap">
       select o.o_point, o.o_seq,o.o_title,o.o_regdate, o.o_text,o.k_seq
@@ -103,13 +108,5 @@
       from order_board o, member m
       where o.m_seq=m.m_seq and o.o_regdate between trunc(sysdate)-${value} and trunc(sysdate)
     </select>
-   
-    <select id="memberOrder" resultMap="orderMap">
-      select o.o_point, o.o_seq,o.o_title,o.o_regdate, o.o_text,o.k_seq
-      from order_board o, member m
-      where o.m_seq=m.m_seq and o.o_seq=1
-    </select>
-    
-    
    
 </mapper>   

@@ -13,8 +13,14 @@ public class orderVO {
 	private Double oLng;
 	private int kSeq;
 	private String orderGubun;
+	private String codeListGubunDetail;
 	
-	
+	public String getCodeListGubunDetail() {
+		return codeListGubunDetail;
+	}
+	public void setCodeListGubunDetail(String codeListGubunDetail) {
+		this.codeListGubunDetail = codeListGubunDetail;
+	}
 	public int getoSeq() {
 		return oSeq;
 	}

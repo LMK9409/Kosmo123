@@ -16,18 +16,7 @@ import com.jang.order.orderVO;
 public class MemberDAO {
 
 	
-	 public  ArrayList<orderVO> memberSearchOrder(int day) {
-	      SqlSession conn =null;
-	      ArrayList<orderVO> resList =null;
-	      try {
-	         conn = MyBatisFactory.getFactory().openSession(); 
-	         resList =(ArrayList)conn.selectList("memberNameSpace.memberSerachOrder",day);   
-	      }catch(Exception e) {
-	    	  e.printStackTrace();
-	    	  conn.close();
-	      }
-	      return resList;
-	   }
+	
 
 	 public  ArrayList<orderVO> memberOrderList() {
 	      SqlSession conn =null;
@@ -53,6 +42,24 @@ public class MemberDAO {
 	      }
 	      return resMList;
 	   }
+	 
+	 
+	 
+	 
+	 
+	 public  ArrayList<orderVO> memberSearchOrder(int day) {
+	      SqlSession conn =null;
+	      ArrayList<orderVO> resList =null;
+	      try {
+	         conn = MyBatisFactory.getFactory().openSession(); 
+	         resList =(ArrayList)conn.selectList("memberNameSpace.memberSerachOrder",day);   
+	      }catch(Exception e) {
+	    	  e.printStackTrace();
+	    	  conn.close();
+	      }
+	      return resList;
+	   }
+	 
 	 
 	 public  ArrayList<orderVO> memberSearchMission(int day) {
 	      SqlSession conn =null;

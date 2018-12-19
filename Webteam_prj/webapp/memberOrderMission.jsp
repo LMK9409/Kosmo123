@@ -61,8 +61,8 @@
      						reshtml+="<td>"+vv.oRegdate+"</td>";
      						reshtml+="<td>"+vv.oText+"</td>";
      						reshtml+="<td>"+vv.oPoint+"</td>";
-     					    reshtml +="<td>"+vv.orderGubun+"</td>";
-     					    reshtml+="<td>>"+vv.mNickName+"</td>";
+     					    reshtml +="<td>"+vv.codeListGubunDetail+"</td>";
+     					    reshtml+="<td>>"+vv.kSeq+"</td>";
      						reshtml+="</tr>";
   				  });
   					reshtml+="</tbody>"; 
@@ -71,6 +71,31 @@
   				}
   			})
   			
+  			
+  			 	$.ajax({                         //의뢰 리스트 ajax로 불러오는부분
+  				url:"/MemberOrderList",
+  				type:"post",
+  				success:function(r){
+  					
+  					var rhtml ="<table class='table'>";
+  					rhtml+="<thead>";
+  					rhtml+="<tr><th>날짜</th><th>상세내역</th><th>의뢰금액</th><th>주문상태</th><th>매칭기사</th></tr>";
+  					rhtml+="</thead>";
+  					rhtml+="<tbody>";
+  					 $.each(r, function(index, vv){
+     						rhtml+="<tr>";
+     						rhtml+="<td>"+vv.oRegdate+"</td>";
+     						rhtml+="<td>"+vv.oText+"</td>";
+     						rhtml+="<td>"+vv.oPoint+"</td>";
+     					    rhtml +="<td>"+vv.codeListGubunDetail+"</td>";
+     						rhtml+="<td><a href='/orderDetail?seq="+vv.oSeq+"' class='btn btn-template-outlined btn-sm'>매칭기사</a></td>";
+     						rhtml+="</tr>";
+  				  });
+  					rhtml+="</tbody>"; 
+  					rhtml+="</table>";
+  				 	$(".order-table").html(rhtml); 
+  				}
+  			})
   			
   			
 /*  		
@@ -119,30 +144,7 @@
             
   			
 	    	
-	    	$.ajax({                         //의뢰 리스트 ajax로 불러오는부분
-  				url:"/MemberOrderList",
-  				type:"post",
-  				success:function(r){
-  					
-  					var rhtml ="<table class='table'>";
-  					rhtml+="<thead>";
-  					rhtml+="<tr><th>날짜</th><th>상세내역</th><th>의뢰금액</th><th>주문상태</th><th>매칭기사</th></tr>";
-  					rhtml+="</thead>";
-  					rhtml+="<tbody>";
-  					 $.each(r, function(index, vv){
-     						rhtml+="<tr>";
-     						rhtml+="<td>"+vv.oRegdate+"</td>";
-     						rhtml+="<td>"+vv.oText+"</td>";
-     						rhtml+="<td>"+vv.oPoint+"</td>";
-     					    rhtml +="<td>"+vv.orderGubun+"</td>";
-     						rhtml+="<td><a href='/orderDetail?seq="+vv.oSeq+"' class='btn btn-template-outlined btn-sm'>매칭기사</a></td>";
-     						rhtml+="</tr>";
-  				  });
-  					rhtml+="</tbody>"; 
-  					rhtml+="</table>";
-  				 	$(".order-table").html(rhtml); 
-  				}
-  			})
+	   
       })
       </script>
         
