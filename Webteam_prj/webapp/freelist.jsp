@@ -55,7 +55,7 @@
             <div class="col-md-5">
               <ul class="breadcrumb d-flex justify-content-end">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">의뢰게시판</li>
+                <li class="breadcrumb-item active">자유게시판</li>
               </ul>
             </div>
           </div>
@@ -76,7 +76,7 @@
                   <div class="col-md-12">
               <div class="box mt-0 mb-lg-0">
                 <div class="table-responsive">
-                  
+                  <!-- 여기에 테이블뿌려짐 -->
                 </div>
               </div>
               <nav aria-label="Page navigation example">

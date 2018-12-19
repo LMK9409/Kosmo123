@@ -1,11 +1,20 @@
 package com.jang.free;
 
-public class FreeComVo {
+import java.util.ArrayList;
+
+public class FreeComVO {
 	private int rSeq;
 	private String rText;
-	private int mSeq;
+	private String mNickName;
 	private int fSeq;
 	private String rRegdate;
+	private ArrayList<FreeComVO> comList;
+	public ArrayList<FreeComVO> getComList() {
+		return comList;
+	}
+	public void setComList(ArrayList<FreeComVO> comList) {
+		this.comList = comList;
+	}
 	public int getrSeq() {
 		return rSeq;
 	}
@@ -18,11 +27,11 @@ public class FreeComVo {
 	public void setrText(String rText) {
 		this.rText = rText;
 	}
-	public int getmSeq() {
-		return mSeq;
+	public String getmNickName() {
+		return mNickName;
 	}
-	public void setmSeq(int mSeq) {
-		this.mSeq = mSeq;
+	public void setmNickName(String mNickName) {
+		this.mNickName = mNickName;
 	}
 	public int getfSeq() {
 		return fSeq;

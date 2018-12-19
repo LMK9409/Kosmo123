@@ -1,5 +1,6 @@
 package com.jang.free;
- 
+
+
 public class FreeVO {
 	private int fSeq;
 	private String fTitle;
@@ -7,6 +8,10 @@ public class FreeVO {
 	private String fRegdate;
 	private String mNickName;  
 	private String fYn;
+	
+	public void setmNickName(String mNickName) {
+		this.mNickName = mNickName;
+	}
 	public int getfSeq() {
 		return fSeq;
 	}
