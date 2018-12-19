@@ -35,12 +35,12 @@ public class QuetionDAO {
 	 * @return
 	 */
 	
-	public QuestionVO selectOne(int qSeq) {
-		QuestionVO list = null; 
+	public QuestionVO selectOne(int mSeq) {
 		SqlSession conn =null;
+		QuestionVO list = null; 
 		try { 
 			conn = MyBatisFactory.getFactory().openSession();
-			list = (QuestionVO)conn.selectList("QuestionNameSpace.memberquestionSelect", qSeq);
+			list = (QuestionVO)conn.selectOne("QuestionNameSpace.questionOne", mSeq);
 		} finally {
 			conn.close();
 		}

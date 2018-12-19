@@ -66,8 +66,8 @@
     </select>
      
     <!--   /*특정 회원의 문의내역 조회*/-->
-     <select id="memberquestionSelect" resultMap="questionMap">
-     select q.q_seq, q.q_text, q.q_regdate, m.m_nickname from question q, member m
+     <select id="questionOne" resultMap="questionMap">
+     select q.q_seq, q.m_seq, q.q_text, q.q_regdate, m.m_nickname from question q, member m
 	where q.m_seq = m.m_seq and q.m_seq = ${value}
     </select> 
     

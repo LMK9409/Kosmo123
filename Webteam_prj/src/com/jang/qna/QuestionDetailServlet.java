@@ -29,11 +29,11 @@ public class QuestionDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int qseq=Integer.parseInt(request.getParameter("mseq"));
-		System.out.println(qseq);
+		int mSeq = Integer.parseInt(request.getParameter("mSeq"));
+		System.out.println(mSeq);
 		QuetionDAO qDAO = new QuetionDAO();
 	    QuestionVO res = new QuestionVO();
-	    res = qDAO.selectOne(qseq);
+	    res = qDAO.selectOne(mSeq);
 		request.setAttribute("RES_VO", res);
 
 		request.getRequestDispatcher("questionDetail.jsp").forward(request, response);

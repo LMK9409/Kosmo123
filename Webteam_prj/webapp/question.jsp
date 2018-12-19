@@ -28,7 +28,10 @@ $(document).ready(function(){
 						 				htmlStr += "<p class='author-category'>Nickname <a href='#'>" + vv.mNickname + "</a></p>";
 						 				htmlStr += "<p class='date-comments'><a href='/question.jsp'> " + vv.qRegdate + " </a></p>";
 						 				htmlStr += "</div>";
-						 				htmlStr += "<p class='intro'>" + vv.qText + "<td><a href='/questionDetail?qseq="+ vv.qSeq +"' class='btn btn-template-outlined btn-sm'>상세보기</a></td></p>";
+						 				htmlStr += "<div>";
+						 				htmlStr += "<p class='intro'>" + vv.qText + "</p>";
+						 				htmlStr += "<td><a href='/questionDetail?mSeq="+ vv.mSeq +"' class='btn btn-template-outlined btn-sm'>상세보기</a></td>"
+						 				htmlStr += "</div>";
 						 				htmlStr += "</div>";
 						 				htmlStr += "</div>";
 							  	});
