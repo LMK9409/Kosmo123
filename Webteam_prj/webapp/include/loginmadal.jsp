@@ -22,6 +22,7 @@
                 var button = document.querySelector('#signInButton');
                 button.addEventListener('click', function() {
                   auth2.signIn();
+					$("#Gname").val(auth2.currentUser.get().getBasicProfile().getName());
                   console.log(auth2.currentUser.get().getBasicProfile());
                   console.log(auth2.currentUser.get().getBasicProfile().getId());
                   console.log(auth2.currentUser.get().getBasicProfile().getName());
@@ -29,7 +30,7 @@
                   console.log(auth2.currentUser.get().getBasicProfile().getFamilyName());
                   console.log(auth2.currentUser.get().getBasicProfile().getImageUrl());
                   console.log(auth2.currentUser.get().getBasicProfile().getEmail());
-                  console.log(gapi.auth2.AuthResponse);
+                  $( "#asd" ).submit();
                 });
             });
         });
@@ -44,7 +45,7 @@
               <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">X</span></button>
             </div>
             <div class="modal-body">
-              <form action="googleasd.jsp">
+              <form name="asd" id="asd"  action="/LoginLogoutServlet" method="post">
               <input type="hidden" name="Gname" id="Gname">
                <input type="hidden" name="ImageURL" id="ImageURL">
                 <input type="hidden" name="Gid" id="Gid">

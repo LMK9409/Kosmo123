@@ -37,11 +37,11 @@ public class LoginLogoutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 request.setCharacterEncoding("UTF-8");
 response.setCharacterEncoding("UTF-8");
-System.out.println(request.getParameter("Gid"));
+
+
+
 System.out.println(request.getParameter("Gname"));
-System.out.println(request.getParameter("ImageURL"));
-System.out.println(request.getParameter("Email"));
-System.out.println(request.getParameter("id_token"));
+
         
 	}
 
